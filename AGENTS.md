@@ -6,6 +6,15 @@ Este arquivo é **auto-suficiente**. Não dependa de `.cursor/rules/`, `.claude/
 
 ---
 
+## 0. Agnóstico de Linguagem
+
+Este projeto pode usar qualquer linguagem (Node, Python, Go, Rust, Java, PHP, Ruby, .NET, Elixir, Swift, Kotlin, etc.). Todas as diretrizes deste documento se aplicam **independentemente da stack**:
+
+- TDD vale para qualquer linguagem (use o framework de teste idiomático: vitest/jest, pytest, go test, cargo test, JUnit, PHPUnit, RSpec, ExUnit, XCTest, etc.).
+- Conventional Commits, debugging sistemático, brainstorming, verificação antes de concluir, segundo cérebro e regras git são universais.
+- A seção Docker (item 9) **só se aplica se o projeto usa containers**. Ignore-a em projetos que rodam direto na máquina.
+- Algumas skills em `.claude/skills/`, `.cursor/skills/` e `.cursor/plugins/` são específicas de stack (Vue.js, Figma, vídeo, contagem APF). Use apenas as que se aplicam ao projeto atual; o restante pode ser removido sem prejuízo.
+
 ## 1. Idioma
 
 Todo output gerado deve ser em **português brasileiro (pt-BR)** com gramática correta — acentuação, cedilha, til, crase e pontuação adequadas. Inclui:
@@ -161,6 +170,8 @@ Comandos GSD comuns (executados via skill quando o agente os suporta):
 Agente que não tenha suporte nativo a essas skills deve **simular** o fluxo: ler `.planning/`, propor um plano, executar, atualizar `STATE.md` ao final.
 
 ## 9. Docker e Deploy
+
+> **Aplicável apenas se o projeto usa Docker.** Em projetos que rodam diretamente na máquina (scripts Python, binários Go, etc.), ignore esta seção inteira.
 
 **Conta Docker Hub:** `filipefalcaofs97`
 **Máquina dev:** Apple Silicon (ARM64)

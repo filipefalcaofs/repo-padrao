@@ -64,7 +64,44 @@ cp docs/brain/3-resources/adrs/0000-template.md docs/brain/3-resources/adrs/0001
 
 `AGENTS.md` é **auto-suficiente** — se um agente só lê esse arquivo, ainda assim seguirá todas as diretrizes do projeto.
 
-## 6. Manter o template atualizado
+## 6. Customizando para sua linguagem
+
+O template é **agnóstico de stack**. Ainda assim, há ajustes recomendados conforme a linguagem do projeto.
+
+### `.gitignore` por linguagem
+
+O `.gitignore` raiz já cobre o essencial das linguagens mais comuns. Se a sua stack exige mais ou se você prefere um arquivo focado, use os templates em [`templates-linguagem/`](templates-linguagem/):
+
+```bash
+# Anexar ao .gitignore existente
+cat docs/templates-linguagem/gitignore-python.txt >> .gitignore
+
+# Ou substituir o .gitignore raiz por completo
+cp docs/templates-linguagem/gitignore-go.txt .gitignore
+```
+
+Templates disponíveis: Node.js, Python, Go, Rust, Java/Kotlin, PHP/Laravel, Ruby/Rails, .NET, Elixir/Phoenix, Swift/iOS.
+
+### Removendo skills que não se aplicam
+
+Algumas skills só fazem sentido em projetos com stack correspondente. Se o seu projeto **não usa**, remova-as para reduzir ruído nos agentes.
+
+| Pasta/skill | Aplica-se a | Como remover |
+|---|---|---|
+| `.claude/skills/vue-*` e `create-adaptable-composable` (8 skills Vue.js) | Projetos Vue 3 | `rm -rf .claude/skills/vue-* .claude/skills/create-adaptable-composable` |
+| `.cursor/plugins/cache/cursor-public/figma/` | Projetos com Figma | `rm -rf .cursor/plugins/cache/cursor-public/figma/` |
+| `.cursor/skills/video-editor/` | Edição de vídeo | `rm -rf .cursor/skills/video-editor/` |
+| `.cursor/skills/contagem-ponto-funcao/` | Contratos públicos brasileiros (APF/IFPUG) | `rm -rf .cursor/skills/contagem-ponto-funcao/` |
+
+As demais skills (GSD, Superpowers, debugging, etc.) são úteis em qualquer projeto.
+
+### Adaptando a seção Docker
+
+A [seção Docker do `AGENTS.md`](../AGENTS.md#9-docker-e-deploy) só se aplica se o projeto **usa containers**. Em projetos que rodam direto na máquina (scripts Python, binários Go compilados, executáveis .NET, etc.), os agentes devem **ignorar essa seção inteira**.
+
+Se quiser deixar isso explícito no seu projeto, edite o `AGENTS.md` removendo a seção 9 ou substituindo-a por uma nota como `> Não aplicável a este projeto.`
+
+## 7. Manter o template atualizado
 
 Se você atualizar uma regra global no seu setup (ex: `~/.cursor/rules/`), replique a mudança neste template para que projetos futuros nasçam atualizados:
 
@@ -78,7 +115,7 @@ git push
 
 Mesmo padrão vale para `.claude/skills/`, `.codex/skills/`, `.cursor/skills/` etc.
 
-## 7. Comandos GSD mais usados
+## 8. Comandos GSD mais usados
 
 ```
 /gsd-progress             status atual do projeto
@@ -93,7 +130,7 @@ Mesmo padrão vale para `.claude/skills/`, `.codex/skills/`, `.cursor/skills/` e
 /gsd-add-todo "tarefa"    adicionar todo
 ```
 
-## 8. Convenções essenciais
+## 9. Convenções essenciais
 
 - **Idioma:** pt-BR em tudo voltado a humanos.
 - **Commits:** Conventional Commits em português, minúsculas, sem ponto final.
