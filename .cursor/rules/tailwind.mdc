@@ -1,0 +1,39 @@
+---
+description: Padroes Tailwind CSS para frontend
+globs: "**/*.vue,**/*.tsx,**/*.jsx,**/*.css,**/*.html"
+alwaysApply: false
+---
+
+# Tailwind CSS — Padroes
+
+## Uso geral
+
+- Usar Tailwind CSS para estilizacao quando houver frontend
+- Evitar estilos inline (`style="..."`) quando Tailwind resolver
+- Evitar CSS custom quando uma classe utilitaria existe
+
+## Padroes visuais
+
+- **Cards:** `rounded-xl` para bordas, `shadow-sm` ou `shadow-md`
+- **Inputs e botoes:** `rounded-lg`
+- **Containers:** `p-4` ou `p-6`
+- **Espacamento entre elementos:** `gap-4` ou `gap-6`
+- **Texto:** usar classes utilitarias (`text-sm`, `text-base`, `text-lg`, `font-medium`, `font-semibold`)
+
+## Dark mode
+
+- Usar classes `dark:` para suportar dark mode
+- Testar ambos os modos ao criar componentes visuais
+- Cores de fundo: `bg-white dark:bg-gray-900` ou equivalente
+- Cores de texto: `text-gray-900 dark:text-gray-100` ou equivalente
+
+## Responsividade
+
+- Mobile first: estilos base para mobile, breakpoints para telas maiores
+- Breakpoints: `sm:`, `md:`, `lg:`, `xl:`
+- Testar em pelo menos 3 tamanhos: mobile, tablet, desktop
+
+## Organizacao de classes
+
+- Agrupar classes por categoria quando a lista for longa
+- Ordem sugerida: layout > dimensoes > espacamento > tipografia > cores > bordas > efeitos

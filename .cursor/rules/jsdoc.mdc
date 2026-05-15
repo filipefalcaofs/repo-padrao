@@ -1,0 +1,49 @@
+---
+description: Documentacao de codigo com JSDoc
+globs: "**/*.js,**/*.ts"
+alwaysApply: false
+---
+
+# JSDoc — Documentacao de Codigo
+
+## Quando documentar
+
+- Funcoes publicas exportadas
+- Funcoes com logica complexa ou nao obvia
+- Funcoes com muitos parametros
+- Tipos e interfaces complexos
+
+## Quando NAO documentar
+
+- Funcoes com nome autoexplicativo e logica simples
+- Getters/setters triviais
+- Funcoes internas obvias
+- Re-exportacoes
+
+## Formato
+
+```typescript
+/**
+ * Calcula o preco final com desconto progressivo baseado na quantidade.
+ * Acima de 10 unidades, aplica 15%. Acima de 50, aplica 25%.
+ *
+ * @param precoUnitario - Preco de uma unidade em centavos
+ * @param quantidade - Numero de unidades
+ * @returns Preco total em centavos com desconto aplicado
+ * @throws {Error} Se preco ou quantidade forem negativos
+ *
+ * @example
+ * calcularPrecoFinal(1000, 15) // 12750 (15 * 1000 * 0.85)
+ */
+function calcularPrecoFinal(precoUnitario: number, quantidade: number): number {
+  // ...
+}
+```
+
+## Tags mais usadas
+
+- `@param` — Parametro da funcao (nome, tipo e descricao)
+- `@returns` — O que a funcao retorna
+- `@throws` — Erros que podem ser lancados
+- `@example` — Exemplo de uso (quando util)
+- `@deprecated` — Marcar como descontinuado, indicar alternativa

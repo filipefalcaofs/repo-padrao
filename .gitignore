@@ -1,0 +1,67 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+credentials.json
+secrets.json
+
+# Dependências
+node_modules/
+vendor/
+.pnp/
+.pnp.js
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Builds e artefatos
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.svelte-kit/
+target/
+*.log
+*.pid
+
+# Testes
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+.pytest_cache/
+
+# GSD — gestão de execução é por projeto, não compartilhada via template
+.planning/
+
+# Caches de assistentes (não as skills/rules versionadas)
+.claude-cache/
+.cursor/cache/
+.cursor/sessions/
+
+# Logs e temporários
+*.log
+logs/
+tmp/
+temp/
+.cache/
