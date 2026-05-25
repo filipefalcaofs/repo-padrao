@@ -72,8 +72,11 @@ repo-padrao/
 │   └── skills/                  Skills OpenAI Codex CLI
 ├── .github/
 │   └── copilot-instructions.md  Instrucoes GitHub Copilot
+├── stacks/
+│   └── laravel/                 Stack Laravel Boost (rules, skills, MCP)
 ├── docs/
 │   ├── COMO_USAR.md             Como usar este template
+│   ├── stacks/LARAVEL.md        Guia Laravel + Boost
 │   └── brain/                   Segundo cerebro (PARA + CODE)
 │       ├── README.md
 │       ├── inbox/               Captura rapida (Capture)
@@ -98,6 +101,27 @@ A pasta `docs/brain/` aplica o método **PARA** (Projects, Areas, Resources, Arc
 
 **Para os agentes:** antes de toda decisão arquitetural, ler `docs/brain/3-resources/adrs/`. Após decidir, registrar um novo ADR.
 
+## Stack Laravel (Laravel Boost)
+
+Projetos PHP/Laravel já incluem **rules e skills** baseadas na documentação [AI Assisted Development — Laravel 13.x](https://laravel.com/docs/13.x/ai) e [Laravel Boost](https://laravel.com/docs/13.x/boost):
+
+| Recurso | Caminho |
+|---|---|
+| Rules Cursor | `.cursor/rules/laravel-core.mdc`, `laravel-boost.mdc` |
+| Skills | `laravel-best-practices`, `laravel-boost`, `pest-testing` |
+| Stack completo | [`stacks/laravel/`](stacks/laravel/) |
+| Guia | [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md) |
+
+Após criar o app Laravel:
+
+```bash
+composer require laravel/boost --dev
+php artisan boost:install
+cp stacks/laravel/.mcp.json.example .mcp.json   # se necessário
+```
+
+Habilitar `laravel-boost` em MCP Settings no Cursor.
+
 ## Adaptando para sua stack
 
 O template não impõe linguagem. Algumas peças são genéricas (regras, segundo cérebro, GSD, idioma, commits) e outras são específicas de stack — estas últimas podem ser removidas ou mantidas conforme o projeto.
@@ -117,6 +141,9 @@ Algumas skills só fazem sentido em projetos com a stack correspondente. Se o se
 | `.cursor/plugins/cache/cursor-public/figma/` | Projetos com integração Figma | `rm -rf .cursor/plugins/cache/cursor-public/figma/` |
 | `.cursor/skills/video-editor/` | Projetos de edição de vídeo | `rm -rf .cursor/skills/video-editor/` |
 | `.cursor/skills/contagem-ponto-funcao/` | Contratos públicos brasileiros (TRT, TJ, etc.) | `rm -rf .cursor/skills/contagem-ponto-funcao/` |
+| `.cursor/rules/laravel-*.mdc` e skills `laravel-*`, `pest-testing` | Projetos Laravel | Ver [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md) |
+| `stacks/laravel/.cursor/skills/livewire-development` | Livewire 4 | `rm -rf stacks/laravel/.cursor/skills/livewire-development` |
+| `stacks/laravel/.cursor/skills/tailwindcss-development` | Tailwind CSS | `rm -rf stacks/laravel/.cursor/skills/tailwindcss-development` |
 
 As skills GSD, Superpowers, debugging e demais utilitários gerais permanecem úteis em qualquer projeto.
 

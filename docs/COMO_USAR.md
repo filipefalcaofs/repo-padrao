@@ -92,8 +92,21 @@ Algumas skills só fazem sentido em projetos com stack correspondente. Se o seu 
 | `.cursor/plugins/cache/cursor-public/figma/` | Projetos com Figma | `rm -rf .cursor/plugins/cache/cursor-public/figma/` |
 | `.cursor/skills/video-editor/` | Edição de vídeo | `rm -rf .cursor/skills/video-editor/` |
 | `.cursor/skills/contagem-ponto-funcao/` | Contratos públicos brasileiros (APF/IFPUG) | `rm -rf .cursor/skills/contagem-ponto-funcao/` |
+| `.cursor/rules/laravel-*.mdc`, skills `laravel-*`, `pest-testing` | Projetos Laravel | Ver [`stacks/LARAVEL.md`](stacks/LARAVEL.md) |
 
 As demais skills (GSD, Superpowers, debugging, etc.) são úteis em qualquer projeto.
+
+### Projetos Laravel (Laravel Boost)
+
+O template inclui stack Laravel baseado em [laravel.com/docs/13.x/ai](https://laravel.com/docs/13.x/ai). Guia completo: [`docs/stacks/LARAVEL.md`](stacks/LARAVEL.md).
+
+```bash
+composer require laravel/boost --dev
+php artisan boost:install
+cp stacks/laravel/.mcp.json.example .mcp.json   # se necessário
+```
+
+Habilitar `laravel-boost` no MCP Settings do Cursor. Invocar skills `/laravel-best-practices` e `/pest-testing` ao trabalhar no backend e testes.
 
 ### Adaptando a seção Docker
 
