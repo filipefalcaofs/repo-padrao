@@ -1,0 +1,8 @@
+{
+  "template_id": "repo-padrao-abp-angular-cursor",
+  "stack": "abp",
+  "variant": "angular",
+  "ide": "cursor",
+  "generated_from": "filipefalcaofs/repo-padrao",
+  "generated_at": "2026-05-25T15:51:12Z"
+}

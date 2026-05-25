@@ -2,7 +2,7 @@
 
 Factory de **templates de projeto** com Superpowers, rules, skills e segundo cérebro para **Cursor**, **Claude Code** e **Codex**.
 
-> **Quer iniciar um app?** Não clone este repositório. Use um template standalone no GitHub — comece pelo guia [**Clonagem por linguagem**](docs/CLONAGEM_POR_LINGUAGEM.md).
+> **Quer iniciar um app?** Não clone este repositório. Escolha **stack + IDE** (`-cursor`, `-claude` ou `-codex`) — guia [**Clonagem por linguagem e IDE**](docs/CLONAGEM_POR_LINGUAGEM.md).
 
 ## Comece aqui
 
@@ -13,29 +13,31 @@ Factory de **templates de projeto** com Superpowers, rules, skills e segundo cé
 | Índice de toda documentação | [**docs/README.md**](docs/README.md) |
 | Mantenedor do factory | [**docs/MANUTENCAO.md**](docs/MANUTENCAO.md) |
 
-## Templates no GitHub (14 repos)
+## Templates no GitHub (42 repos)
 
-Clone direto — stack já aplicada na raiz, sem pasta `stacks/`.
+Convenção: `repo-padrao-{stack}-{cursor|claude|codex}` — **somente** os arquivos da stack e da IDE escolhidas.
 
-| Linguagem | Repositórios |
+| Linguagem | Base do nome (×3 IDEs) |
 |---|---|
-| **Agnóstico** | [`repo-padrao-base`](https://github.com/filipefalcaofs/repo-padrao-base) — sem stack; só Superpowers + brain |
-| **PHP** | [`laravel-vue`](https://github.com/filipefalcaofs/repo-padrao-laravel-vue) · [`laravel-react`](https://github.com/filipefalcaofs/repo-padrao-laravel-react) · [`laravel-svelte`](https://github.com/filipefalcaofs/repo-padrao-laravel-svelte) |
-| **Java** | [`jhipster-angular`](https://github.com/filipefalcaofs/repo-padrao-jhipster-angular) · [`jhipster-react`](https://github.com/filipefalcaofs/repo-padrao-jhipster-react) · [`jhipster-vue`](https://github.com/filipefalcaofs/repo-padrao-jhipster-vue) |
-| **.NET (C#)** | [`abp-angular`](https://github.com/filipefalcaofs/repo-padrao-abp-angular) · [`abp-react`](https://github.com/filipefalcaofs/repo-padrao-abp-react) · [`abp-blazor`](https://github.com/filipefalcaofs/repo-padrao-abp-blazor) · [`abp-mvc`](https://github.com/filipefalcaofs/repo-padrao-abp-mvc) |
-| **Python** | [`django`](https://github.com/filipefalcaofs/repo-padrao-django) *(secundária)* |
-| **TypeScript** | [`nestjs`](https://github.com/filipefalcaofs/repo-padrao-nestjs) *(secundária)* |
-| **Go** | [`go-api`](https://github.com/filipefalcaofs/repo-padrao-go-api) *(secundária)* |
+| **Agnóstico** | `repo-padrao-base` |
+| **PHP** | `repo-padrao-laravel-vue` · `-react` · `-svelte` |
+| **Java** | `repo-padrao-jhipster-angular` · `-react` · `-vue` |
+| **.NET (C#)** | `repo-padrao-abp-angular` · `-react` · `-blazor` · `-mvc` |
+| **Python** | `repo-padrao-django` |
+| **TypeScript** | `repo-padrao-nestjs` |
+| **Go** | `repo-padrao-go-api` |
+
+Exemplo: `git clone …/repo-padrao-laravel-vue-cursor.git` ou `…/repo-padrao-django-claude.git`.
 
 ## O que cada template inclui
 
-| Camada | Conteúdo |
+Cada clone traz **apenas a camada da IDE escolhida** + stack + `docs/brain/`.
+
+| IDE | Conteúdo no repo |
 |---|---|
-| Superpowers | `.cursor/plugins/superpowers/` + rule `superpowers.mdc` (TDD, brainstorming, debugging) |
-| Rules universais | pt-BR, git, comunicação, Docker |
-| Stack | Rules + skills em `.cursor/`, `.claude/skills/`, `.codex/skills/` |
-| MCP | Laravel Boost ou ABP Studio (quando aplicável) |
-| Segundo cérebro | `docs/brain/` (PARA + ADRs) |
+| **Cursor** (`-cursor`) | `.cursor/rules/`, `.cursor/skills/`, Superpowers plugin, MCP (Laravel/ABP) |
+| **Claude Code** (`-claude`) | `CLAUDE.md`, `.claude/skills/` (stack + Superpowers) |
+| **Codex** (`-codex`) | `AGENTS.md`, `.codex/skills/` (stack + Superpowers) |
 
 ## Estrutura deste meta-repo
 

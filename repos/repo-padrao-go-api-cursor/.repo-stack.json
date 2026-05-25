@@ -1,0 +1,8 @@
+{
+  "template_id": "repo-padrao-go-api-cursor",
+  "stack": "go-api",
+  "variant": "rest",
+  "ide": "cursor",
+  "generated_from": "filipefalcaofs/repo-padrao",
+  "generated_at": "2026-05-25T15:51:17Z"
+}

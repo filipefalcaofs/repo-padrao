@@ -1,7 +1,0 @@
-{
-  "template_id": "repo-padrao-laravel-svelte",
-  "stack": "laravel",
-  "variant": "inertia-svelte",
-  "generated_from": "filipefalcaofs/repo-padrao",
-  "generated_at": "2026-05-25T15:46:28Z"
-}

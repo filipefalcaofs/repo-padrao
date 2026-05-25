@@ -4,23 +4,33 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPOS_DIR="$ROOT/repos"
 OWNER="filipefalcaofs"
+IDES=(cursor claude codex)
 
-descriptions=(
-  "repo-padrao-base|Template agnóstico com Superpowers e segundo cérebro"
-  "repo-padrao-laravel-vue|Template Laravel + Inertia Vue"
-  "repo-padrao-laravel-react|Template Laravel + Inertia React"
-  "repo-padrao-laravel-svelte|Template Laravel + Inertia Svelte"
-  "repo-padrao-jhipster-angular|Template JHipster + Angular"
-  "repo-padrao-jhipster-react|Template JHipster + React"
-  "repo-padrao-jhipster-vue|Template JHipster + Vue"
-  "repo-padrao-abp-angular|Template ABP + Angular"
-  "repo-padrao-abp-react|Template ABP + React modern"
-  "repo-padrao-abp-blazor|Template ABP + Blazor"
-  "repo-padrao-abp-mvc|Template ABP + MVC"
-  "repo-padrao-django|Template Django + DRF"
-  "repo-padrao-nestjs|Template NestJS API"
-  "repo-padrao-go-api|Template Go REST API"
+# base_id|descrição curta
+STACKS=(
+  "repo-padrao-base|Agnóstico"
+  "repo-padrao-laravel-vue|Laravel Inertia Vue"
+  "repo-padrao-laravel-react|Laravel Inertia React"
+  "repo-padrao-laravel-svelte|Laravel Inertia Svelte"
+  "repo-padrao-jhipster-angular|JHipster Angular"
+  "repo-padrao-jhipster-react|JHipster React"
+  "repo-padrao-jhipster-vue|JHipster Vue"
+  "repo-padrao-abp-angular|ABP Angular"
+  "repo-padrao-abp-react|ABP React"
+  "repo-padrao-abp-blazor|ABP Blazor"
+  "repo-padrao-abp-mvc|ABP MVC"
+  "repo-padrao-django|Django DRF"
+  "repo-padrao-nestjs|NestJS API"
+  "repo-padrao-go-api|Go REST API"
 )
+
+ide_label() {
+  case "$1" in
+    cursor) echo "Cursor" ;;
+    claude) echo "Claude Code" ;;
+    codex) echo "Codex" ;;
+  esac
+}
 
 push_repo() {
   local name="$1"
@@ -68,9 +78,11 @@ push_repo() {
   echo "OK $name"
 }
 
-for entry in "${descriptions[@]}"; do
-  IFS='|' read -r name desc <<< "$entry"
-  push_repo "$name" "$desc"
+for entry in "${STACKS[@]}"; do
+  IFS='|' read -r base desc <<< "$entry"
+  for ide in "${IDES[@]}"; do
+    push_repo "${base}-${ide}" "${desc} ($(ide_label "$ide"))"
+  done
 done
 
 echo ""

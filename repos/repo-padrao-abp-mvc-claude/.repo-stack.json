@@ -1,0 +1,8 @@
+{
+  "template_id": "repo-padrao-abp-mvc-claude",
+  "stack": "abp",
+  "variant": "mvc",
+  "ide": "claude",
+  "generated_from": "filipefalcaofs/repo-padrao",
+  "generated_at": "2026-05-25T15:51:25Z"
+}
