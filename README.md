@@ -1,6 +1,6 @@
 # repo-padrao
 
-Factory de **templates de projeto** com Superpowers, rules, skills e segundo cérebro para **Cursor, Claude Code, GitHub Copilot, Codex** e demais agentes.
+Factory de **templates de projeto** com Superpowers, rules, skills e segundo cérebro para **Cursor**, **Claude Code** e **Codex**.
 
 > **Quer iniciar um app?** Não clone este repositório. Use um template standalone no GitHub — comece pelo guia [**Clonagem por linguagem**](docs/CLONAGEM_POR_LINGUAGEM.md).
 
@@ -68,10 +68,9 @@ A pasta `repos/` contém **artefatos gerados** para manutenção. Para novos pro
 
 | Assistente | Entrada principal |
 |---|---|
-| Cursor | `.cursor/rules/`, `.cursor/skills/`, `.cursor/plugins/superpowers/` |
-| Claude Code | `CLAUDE.md` + `.claude/skills/` |
-| GitHub Copilot | `.github/copilot-instructions.md` |
-| Codex / Jules / Aider / outros | `AGENTS.md` + `.codex/skills/` |
+| **Cursor** | `.cursor/rules/`, `.cursor/skills/`, `.cursor/plugins/superpowers/` |
+| **Claude Code** | `CLAUDE.md` + `.claude/skills/` |
+| **Codex** | `AGENTS.md` + `.codex/skills/` |
 
 ## Licença
 

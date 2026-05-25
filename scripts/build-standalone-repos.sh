@@ -46,7 +46,6 @@ copy_base() {
   cp "$ROOT/.gitignore" "$dest/"
   cp "$ROOT/AGENTS.md" "$dest/"
   cp "$ROOT/CLAUDE.md" "$dest/"
-  cp -R "$ROOT/.github" "$dest/"
   mkdir -p "$dest/docs/brain" "$dest/docs/stacks"
   cp -R "$ROOT/docs/brain/." "$dest/docs/brain/"
   cp -R "$ROOT/docs/templates-linguagem" "$dest/docs/"
@@ -102,27 +101,6 @@ write_stack_json() {
 EOF
 }
 
-write_copilot_stack() {
-  local dest="$1"
-  local stack_line="$2"
-  cat > "$dest/.github/copilot-instructions.md" <<EOF
-# Instruções para o GitHub Copilot
-
-Fonte de verdade: **[AGENTS.md](../AGENTS.md)**.
-
-## Stack deste template
-
-$stack_line
-
-## Resumo
-
-- pt-BR em textos para humanos; código em inglês
-- TDD, Superpowers, debugging sistemático
-- Conventional Commits em português
-- Decisões em \`docs/brain/3-resources/adrs/\`
-EOF
-}
-
 build_base() {
   local dest="$OUT/repo-padrao-base"
   echo ">>> repo-padrao-base"
@@ -131,7 +109,6 @@ build_base() {
   cp "$ROOT/docs/COMO_USAR.md" "$dest/docs/COMO_USAR.md"
   strip_factory_refs "$dest"
   write_stack_json "$dest" "repo-padrao-base" "none" "agnostic"
-  write_copilot_stack "$dest" "Agnóstico — escolha um repo \`repo-padrao-<stack>\` se ainda não definiu a stack."
   cat > "$dest/README.md" <<'EOF'
 # repo-padrao-base
 
@@ -151,7 +128,7 @@ Ver [**docs/CLONAGEM_POR_LINGUAGEM.md**](docs/CLONAGEM_POR_LINGUAGEM.md) — lin
 
 ## Assistentes
 
-Cursor · Claude Code · Copilot · Codex — ver [`docs/COMO_USAR.md`](docs/COMO_USAR.md) e [`AGENTS.md`](AGENTS.md).
+Cursor · Claude Code · Codex — ver [`docs/COMO_USAR.md`](docs/COMO_USAR.md) e [`AGENTS.md`](AGENTS.md).
 EOF
 }
 
@@ -167,7 +144,6 @@ build_laravel() {
   cp "$ROOT/docs/stacks/LARAVEL.md" "$dest/docs/stacks/LARAVEL.md"
   strip_factory_refs "$dest"
   write_stack_json "$dest" "$id" "laravel" "inertia-${adapter}"
-  write_copilot_stack "$dest" "Laravel 12/13 + Inertia **${adapter}** + Laravel Boost (rules/skills/MCP)."
   cat > "$dest/README.md" <<EOF
 # ${id}
 
@@ -197,7 +173,7 @@ Habilitar \`laravel-boost\` no MCP Settings (Cursor). Ver [\`docs/stacks/LARAVEL
 
 ## Assistentes
 
-Cursor, Claude Code, GitHub Copilot, Codex CLI — ver [\`AGENTS.md\`](AGENTS.md).
+Cursor · Claude Code · Codex — ver [\`AGENTS.md\`](AGENTS.md).
 EOF
   cat > "$dest/docs/COMO_USAR.md" <<EOF
 # Como usar — ${id}
@@ -232,7 +208,6 @@ build_jhipster() {
   cp "$ROOT/docs/stacks/JHIPSTER.md" "$dest/docs/stacks/JHIPSTER.md"
   strip_factory_refs "$dest"
   write_stack_json "$dest" "$id" "jhipster" "$frontend"
-  write_copilot_stack "$dest" "JHipster 8+ + frontend **${frontend}** (Spring Boot)."
   cat > "$dest/README.md" <<EOF
 # ${id}
 
@@ -279,7 +254,6 @@ build_abp() {
   cp "$ROOT/docs/stacks/ABP.md" "$dest/docs/stacks/ABP.md"
   strip_factory_refs "$dest"
   write_stack_json "$dest" "$id" "abp" "$ui"
-  write_copilot_stack "$dest" "ABP Framework + UI **${ui}** (rules oficiais cursor-abp-plugin + MCP Studio)."
   local create_cmd
   case "$ui" in
     angular) create_cmd="abp new MeuApp -u ng -d ef" ;;
@@ -331,7 +305,6 @@ build_django() {
   cp "$ROOT/docs/stacks/DJANGO.md" "$dest/docs/stacks/DJANGO.md"
   strip_factory_refs "$dest"
   write_stack_json "$dest" "$id" "django" "drf"
-  write_copilot_stack "$dest" "Django + Django REST Framework + pytest-django."
   cat > "$dest/README.md" <<'EOF'
 # repo-padrao-django
 
@@ -377,7 +350,6 @@ build_nestjs() {
   cp "$ROOT/docs/stacks/NESTJS.md" "$dest/docs/stacks/NESTJS.md"
   strip_factory_refs "$dest"
   write_stack_json "$dest" "$id" "nestjs" "api"
-  write_copilot_stack "$dest" "NestJS API REST (TypeScript) + Jest."
   cat > "$dest/README.md" <<'EOF'
 # repo-padrao-nestjs
 
@@ -421,7 +393,6 @@ build_go_api() {
   cp "$ROOT/docs/stacks/GO.md" "$dest/docs/stacks/GO.md"
   strip_factory_refs "$dest"
   write_stack_json "$dest" "$id" "go-api" "rest"
-  write_copilot_stack "$dest" "Go REST API (layout internal/) + testes table-driven."
   cat > "$dest/README.md" <<'EOF'
 # repo-padrao-go-api
 

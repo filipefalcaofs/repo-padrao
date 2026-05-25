@@ -1,8 +1,8 @@
 # AGENTS.md
 
-Instruções universais para qualquer agente de IA trabalhando neste projeto: **OpenAI Codex CLI, Jules, Cursor, Claude Code, GitHub Copilot, Aider, Continue** ou qualquer outro.
+Instruções para agentes de IA neste projeto: **Cursor**, **Claude Code** e **Codex**.
 
-Este arquivo é **auto-suficiente**. Não dependa de `.cursor/rules/`, `.claude/skills/`, `.codex/skills/` ou `.github/copilot-instructions.md` — agentes que não consigam ler essas fontes devem encontrar aqui tudo que precisam para trabalhar de acordo com os padrões deste projeto.
+Este repositório está preparado para os três assistentes acima. Cada um lê sua pasta nativa; o **Codex** também usa este `AGENTS.md` como referência universal.
 
 ---
 
@@ -236,9 +236,7 @@ inbox/  →  1-4 (PARA)  →  destilação  →  PR/release/docs
 .claude/
   skills/                 Skills Claude Code — Claude lê automaticamente
 .codex/
-  skills/                 Skills OpenAI Codex CLI — Codex lê automaticamente
-.github/
-  copilot-instructions.md Instruções GitHub Copilot
+  skills/                 Skills Codex — Codex lê automaticamente
 docs/
   COMO_USAR.md            Como usar este template
   brain/                  Segundo cérebro do projeto (PARA + CODE)
@@ -249,7 +247,7 @@ README.md                 Documentação do projeto
 .gitignore                Arquivos ignorados pelo git
 ```
 
-Agentes **sem suporte nativo** a skills/`.mdc`/copilot-instructions devem ler **apenas** este `AGENTS.md` — ele contém tudo que importa.
+**Codex** deve ler este `AGENTS.md` junto com `.codex/skills/`. **Cursor** e **Claude Code** usam suas pastas nativas (ver tabela acima).
 
 ## 12. Resumo executivo
 

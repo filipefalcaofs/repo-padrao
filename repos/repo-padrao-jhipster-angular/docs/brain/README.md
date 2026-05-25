@@ -54,7 +54,7 @@ PR / commit / release / docs          ← Express
 
 ## Para os agentes de IA
 
-Antes de qualquer decisão arquitetural, **leia** `docs/brain/3-resources/adrs/`. Após tomar uma decisão arquitetural relevante, **registre** um novo ADR usando o template em `docs/brain/3-resources/adrs/0000-template.md`. Isso vale para Cursor, Claude Code, GitHub Copilot, Codex e qualquer outro agente.
+Antes de qualquer decisão arquitetural, **leia** `docs/brain/3-resources/adrs/`. Após tomar uma decisão arquitetural relevante, **registre** um novo ADR usando o template em `docs/brain/3-resources/adrs/0000-template.md`. Isso vale para Cursor, Claude Code e Codex.
 
 ## Convenções de nome
 

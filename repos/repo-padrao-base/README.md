@@ -16,4 +16,4 @@ Ver [**docs/CLONAGEM_POR_LINGUAGEM.md**](docs/CLONAGEM_POR_LINGUAGEM.md) — lin
 
 ## Assistentes
 
-Cursor · Claude Code · Copilot · Codex — ver [`docs/COMO_USAR.md`](docs/COMO_USAR.md) e [`AGENTS.md`](AGENTS.md).
+Cursor · Claude Code · Codex — ver [`docs/COMO_USAR.md`](docs/COMO_USAR.md) e [`AGENTS.md`](AGENTS.md).

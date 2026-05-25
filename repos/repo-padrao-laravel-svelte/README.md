@@ -26,4 +26,4 @@ Habilitar `laravel-boost` no MCP Settings (Cursor). Ver [`docs/stacks/LARAVEL.md
 
 ## Assistentes
 
-Cursor, Claude Code, GitHub Copilot, Codex CLI — ver [`AGENTS.md`](AGENTS.md).
+Cursor · Claude Code · Codex — ver [`AGENTS.md`](AGENTS.md).

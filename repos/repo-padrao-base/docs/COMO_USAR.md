@@ -42,10 +42,9 @@ Detalhes, variantes e bootstrap: [**CLONAGEM_POR_LINGUAGEM.md**](CLONAGEM_POR_LI
 
 | Assistente | Lê |
 |---|---|
-| Cursor | `.cursor/rules/`, `.cursor/skills/`, `.cursor/plugins/superpowers/` |
-| Claude Code | `CLAUDE.md`, `.claude/skills/` |
-| GitHub Copilot | `.github/copilot-instructions.md` |
-| Codex / outros | `AGENTS.md`, `.codex/skills/` |
+| **Cursor** | `.cursor/rules/`, `.cursor/skills/`, `.cursor/plugins/superpowers/` |
+| **Claude Code** | `CLAUDE.md`, `.claude/skills/` |
+| **Codex** | `AGENTS.md`, `.codex/skills/` |
 
 ## Mantenedor do factory
 
