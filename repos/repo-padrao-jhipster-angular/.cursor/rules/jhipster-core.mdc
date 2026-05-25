@@ -1,0 +1,61 @@
+---
+description: Convenções JHipster 8+ — Spring Boot, entidades, REST, Liquibase e testes
+globs: **/*.java,**/*.jdl,src/main/**,src/test/**,pom.xml,build.gradle,gradle.properties,.yo-rc.json
+alwaysApply: false
+---
+
+# JHipster — Core
+
+Stack **custom** do repo-padrao, alinhada à [documentação JHipster](https://www.jhipster.tech/). Não existe pacote oficial equivalente ao Laravel Boost.
+
+## Geradores primeiro
+
+- Preferir `jhipster entity`, `jhipster jdl`, `jhipster spring-service`, `jhipster spring-controller` em vez de criar arquivos manualmente.
+- Conferir opções com `jhipster entity --help` (ou subcomando equivalente) antes de gerar.
+- Após alterar JDL, importar com `jhipster jdl arquivo.jdl --force` (ou `--interactive` quando houver conflito).
+
+## Estrutura gerada
+
+- **Domain** — entidades JPA em `domain/` (ou pacote equivalente do projeto).
+- **Repository** — interfaces Spring Data JPA.
+- **Service** — lógica de negócio; controllers REST delegam ao service.
+- **DTO + Mapper** — MapStruct para transferência; não expor entidades diretamente na API.
+- **REST** — controllers em `web/rest/`; prefixo `/api/`.
+- **Liquibase** — changelogs em `src/main/resources/config/liquibase/`.
+
+Não mover arquivos gerados para pacotes diferentes sem pedido explícito — quebra convenções e imports.
+
+## JPA e banco
+
+- Relacionamentos com fetch type consciente; evitar N+1 (EntityGraph, `@EntityGraph`, join fetch quando apropriado).
+- Liquibase para toda alteração de schema — não alterar tabelas manualmente em produção.
+- IDs: UUID ou Long conforme `.yo-rc.json` / JDL do projeto.
+
+## REST e validação
+
+- Bean Validation (`@Valid`, `@NotNull`, etc.) nos DTOs de entrada.
+- Paginação com `Pageable` e headers JHipster (`X-Total-Count`).
+- Status HTTP corretos: 201 + Location em criação, 404 quando recurso ausente.
+
+## Segurança
+
+- Seguir padrão JWT/OAuth2 já configurado no projeto (não reinventar filtro de auth).
+- `@PreAuthorize` ou regras em `SecurityConfiguration` conforme o projeto.
+- Nunca expor endpoints admin sem role adequada.
+
+## Testes
+
+- Unit: JUnit 5 + Mockito nos services.
+- Integração: `@SpringBootTest`, MockMvc ou RestAssured conforme padrão do projeto gerado.
+- Ativar skill `spring-testing` ao escrever ou corrigir testes.
+
+## Frontend
+
+- Framework definido em `.jhipster-stack.json` (`frontend`: `angular` | `react` | `vue`).
+- Se ausente, rodar `./stacks/jhipster/scripts/choose-frontend-framework.sh`.
+- Ver rule `jhipster-frontend` e skill do framework escolhido.
+
+## Consistência
+
+- Antes de padrão novo, verificar entidades e controllers irmãos gerados pelo JHipster.
+- Ativar skill `jhipster-development` ao escrever, revisar ou refatorar backend Java.

@@ -1,0 +1,43 @@
+---
+description: ABP Studio MCP — telemetria, controle de apps e estrutura da solution
+globs: **/*.cs,**/*.csproj,**/*.sln,**/angular/**,**/react/**,**/*.razor
+alwaysApply: false
+---
+
+# ABP Studio MCP
+
+Requer [ABP Studio](https://abp.io/studio) em execução e CLI `abp` no PATH. Docs: [Model Context Protocol](https://abp.io/docs/latest/studio/model-context-protocol).
+
+## Configuração
+
+```json
+{
+  "mcpServers": {
+    "abp-studio": {
+      "command": "abp",
+      "args": ["mcp-studio"]
+    }
+  }
+}
+```
+
+Copiar de `stacks/abp/.mcp.json.example` para `.mcp.json` e habilitar em MCP Settings do Cursor.
+
+## Quando usar MCP vs código
+
+Preferir ferramentas MCP quando ABP Studio estiver aberto com a solution:
+
+| Ferramenta | Uso |
+|---|---|
+| `get_exceptions` | Debug de erros em runtime |
+| `get_logs` | Logs filtrados por nível |
+| `list_applications` / `start_application` | Controle de apps no Solution Runner |
+| `get_solution_info` / `list_modules` | Entender estrutura da solution |
+
+## MCP cloud (opcional)
+
+`abp mcp` conecta à base de conhecimento ABP.IO (docs, source search) — requer licença. Separado de `abp mcp-studio`.
+
+## Plugin oficial
+
+Rules backend/UI vêm de [abpframework/cursor-abp-plugin](https://github.com/abpframework/cursor-abp-plugin). Atualizar via `stacks/abp/scripts/sync-upstream-rules.sh`.

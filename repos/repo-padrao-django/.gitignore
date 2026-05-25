@@ -1,0 +1,230 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+credentials.json
+secrets.json
+
+# GSD — gestão de execução é por projeto, não compartilhada via template
+.planning/
+
+# Caches de assistentes (não as skills/rules versionadas)
+.claude-cache/
+.cursor/cache/
+.cursor/sessions/
+
+# Logs e temporários genéricos
+*.log
+*.pid
+logs/
+tmp/
+temp/
+.cache/
+
+# Node / JavaScript / TypeScript
+node_modules/
+.pnp/
+.pnp.js
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.svelte-kit/
+.turbo/
+.vite/
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+*.egg-info/
+.python-version
+
+# Go
+*.exe
+*.test
+*.out
+*.so
+*.dylib
+bin/
+pkg/
+
+# Rust
+target/
+# Cargo.lock — mantenha versionado em binários; ignore em libs (ajuste conforme projeto)
+
+# Java / Kotlin / Gradle
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+.gradle/
+build/
+out/
+hs_err_pid*
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.pdb
+# *.dll — não ignorar por padrão; bibliotecas DLL podem ser intencionais
+
+# PHP / Composer / Laravel
+vendor/
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+bootstrap/cache/*.php
+!bootstrap/cache/.gitkeep
+
+# Ruby / Bundler / Rails
+*.gem
+.bundle/
+log/*.log
+tmp/
+# Gemfile.lock — versione em apps; ignore em gems (ajuste conforme projeto)
+
+# Elixir / Phoenix
+_build/
+deps/
+*.beam
+*.ez
+priv/static/
+.elixir_ls/
+
+# Swift / iOS / Xcode
+*.xcuserstate
+xcuserdata/
+Pods/
+*.xcworkspace/contents.xcworkspacedata
+DerivedData/
+
+# Terraform / Infra
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Django (repo-padrao stack)
+# Template .gitignore para Python
+
+# Byte-compiled e otimizados
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribuição / empacotamento
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Ambientes virtuais
+.env
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+.python-version
+
+# Testes e cobertura
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Type checkers e linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Jupyter / IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# Frameworks
+*.sage.py
+celerybeat-schedule
+celerybeat.pid
+
+# Django
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache
+
+# FastAPI / outros
+.scrapy
+
+# Documentação
+docs/_build/
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

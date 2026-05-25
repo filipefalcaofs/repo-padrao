@@ -1,0 +1,6 @@
+{
+  "stack": "jhipster",
+  "frontend": "angular",
+  "frontend_skill": "jhipster-angular-development",
+  "notes": "Copie para .jhipster-stack.json na raiz ou use choose-frontend-framework.sh"
+}

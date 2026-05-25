@@ -1,0 +1,7 @@
+{
+  "stack": "abp",
+  "ui_framework": "angular",
+  "ui_rule": "ui-angular",
+  "ui_skill": "",
+  "notes": "Copie para .abp-stack.json ou use choose-ui-framework.sh"
+}

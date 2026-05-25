@@ -1,0 +1,7 @@
+{
+  "template_id": "repo-padrao-laravel-vue",
+  "stack": "laravel",
+  "variant": "inertia-vue",
+  "generated_from": "filipefalcaofs/repo-padrao",
+  "generated_at": "2026-05-25T15:35:58Z"
+}

@@ -1,0 +1,30 @@
+---
+description: Django REST Framework — serializers, viewsets, permissions e paginação
+globs: **/serializers.py,**/views.py,**/api/**,**/urls.py,**/*viewset*
+alwaysApply: false
+---
+
+# Django REST Framework
+
+## Padrões
+
+- `ModelSerializer` ou `Serializer` — validação nos serializers.
+- ViewSets + `DefaultRouter` ou APIViews — seguir app existente.
+- Permissions: `IsAuthenticated`, custom `BasePermission` por recurso.
+- Paginação: `PageNumberPagination` ou cursor — consistente na API.
+
+## N+1
+
+- `select_related` / `prefetch_related` em `get_queryset()` de viewsets.
+
+## Versionamento
+
+- Prefixo `/api/v1/` quando o projeto versiona.
+
+## Erros
+
+- Respostas JSON padronizadas; não expor traceback em produção.
+
+## Skill
+
+Ativar `django-drf` ao criar ou alterar endpoints REST.

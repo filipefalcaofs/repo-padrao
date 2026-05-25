@@ -1,0 +1,38 @@
+---
+description: UI ABP — Angular, React modern, Blazor ou MVC conforme .abp-stack.json
+globs: **/angular/**,**/react/**,**/*.razor,**/Pages/**,**/Views/**,**/wwwroot/**
+alwaysApply: false
+---
+
+# ABP — UI Framework
+
+Framework definido em `.abp-stack.json` (`ui_framework`: `angular` | `react` | `blazor` | `mvc`).
+
+Se ausente, rodar `./stacks/abp/scripts/choose-ui-framework.sh`.
+
+## Qual rule usar
+
+| Framework | Rule | Template ABP |
+|---|---|---|
+| Angular (padrão clássico) | `ui-angular` | `abp new App -u ng` |
+| React (modern) | `ui-react` | `abp new App --template app --modern --ui-framework react` |
+| Blazor | `ui-blazor` | `abp new App -u blazor` / Blazor Server / WebApp |
+| MVC / Razor | `ui-mvc` | `abp new App -u mvc` |
+
+Apenas **uma** rule `ui-*` fica ativa no projeto após `choose-ui-framework.sh`.
+
+## React modern
+
+- App em `react/` (layered) ou `apps/react/` (microservice)
+- Admin Console no backend em `/admin-console/`
+- Skill complementar: `abp-react-development`
+
+## Proxy / API
+
+- Angular clássico: `abp generate-proxy -t ng`
+- React modern: clientes Axios + TanStack Query no template
+- Blazor/MVC: integração in-process ou HTTP conforme template tiered
+
+## Tema
+
+LeptonX é o tema recomendado para produção (Angular, Blazor, MVC).

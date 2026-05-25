@@ -1,0 +1,56 @@
+---
+description: JDL (JHipster Domain Language) — modelagem de entidades, relacionamentos e importação
+globs: **/*.jdl,**/.jhipster/**,.yo-rc.json
+alwaysApply: false
+---
+
+# JHipster JDL
+
+## Quando usar JDL
+
+- Várias entidades ou relacionamentos — preferir JDL a vários `jhipster entity` interativos.
+- Documentar modelo de domínio versionado em `*.jdl` na raiz ou em `jdl/`.
+
+## Sintaxe essencial
+
+```jdl
+entity Product {
+  name String required maxlength(100)
+  price BigDecimal required min(0)
+  description TextBlob
+}
+
+enum ProductStatus {
+  DRAFT, PUBLISHED, ARCHIVED
+}
+
+relationship ManyToOne {
+  Product{category(required)} to Category
+}
+
+paginate Product with pagination
+dto Product with mapstruct
+service Product with serviceClass
+```
+
+## Boas práticas
+
+- Nomes de entidade em PascalCase; campos em camelCase.
+- `required`, `unique`, `min`/`max`, `pattern` no JDL — espelham Bean Validation.
+- `dto * with mapstruct` para APIs REST padrão JHipster.
+- `paginate` ou `infinite-scroll` conforme UX da listagem.
+- Relacionamentos bidirecionais só quando necessário (impacto JSON e lazy loading).
+
+## Importação
+
+```bash
+jhipster jdl model.jdl
+jhipster jdl model.jdl --force          # sobrescreve regeneração
+jhipster jdl model.jdl --interactive    # conflitos
+```
+
+Após import, revisar diff — especialmente Liquibase e mappers.
+
+## Skill
+
+Ativar `jhipster-jdl` ao criar ou alterar arquivos `.jdl` ou entidades em `.jhipster/*.json`.

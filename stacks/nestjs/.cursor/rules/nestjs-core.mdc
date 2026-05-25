@@ -1,0 +1,43 @@
+---
+description: NestJS — modules, controllers, services, DTOs, pipes e testes
+globs: **/*.ts,**/nest-cli.json,**/package.json,src/**,test/**
+alwaysApply: false
+---
+
+# NestJS — Core
+
+Stack **custom** do repo-padrao. Foco em **API REST** TypeScript.
+
+## Estrutura
+
+- Feature modules: `feature/feature.module.ts`, `feature.controller.ts`, `feature.service.ts`.
+- DTOs com `class-validator` + `class-transformer`.
+- Entities: TypeORM ou Prisma — seguir o que o projeto usa.
+- Config: `@nestjs/config` + `.env` (nunca commitar secrets).
+
+## Controllers
+
+- Finos — delegar ao service.
+- Status codes explícitos (`@HttpCode`, `@Post()` → 201).
+- Swagger: `@ApiTags`, `@ApiOperation` se `@nestjs/swagger` ativo.
+
+## Services
+
+- `@Injectable()`; lógica de negócio aqui.
+- Transações no service quando ORM exigir.
+
+## Validação
+
+- `ValidationPipe` global com `whitelist: true`, `forbidNonWhitelisted: true`.
+- DTOs para entrada — não tipos soltos no `@Body()`.
+
+## Testes
+
+- Unit: `Test.createTestingModule`.
+- E2E: `supertest` em `test/`.
+- Skill `nestjs-testing`.
+
+## Skills
+
+- `nestjs-development` — padrões gerais
+- `nestjs-testing` — testes
