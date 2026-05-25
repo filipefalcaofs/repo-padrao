@@ -1,12 +1,10 @@
-# Como usar o repo-padrao
+# Como usar
 
-## Você quer iniciar um projeto?
+## Desenvolvedor — iniciar projeto
 
-**Escolha pela linguagem:** [`docs/CLONAGEM_POR_LINGUAGEM.md`](CLONAGEM_POR_LINGUAGEM.md) — guia com comando `git clone` e bootstrap por PHP, Java, .NET, Python, TypeScript ou Go.
-
-Ou clone um repositório standalone em [`repos/`](../repos/README.md) — stack e variantes já configuradas.
-
-Exemplo Laravel + Inertia Vue:
+1. Abra [**CLONAGEM_POR_LINGUAGEM.md**](CLONAGEM_POR_LINGUAGEM.md).
+2. Escolha a linguagem e o template.
+3. Clone do GitHub (exemplo PHP / Laravel + Vue):
 
 ```bash
 git clone https://github.com/filipefalcaofs/repo-padrao-laravel-vue.git meu-app
@@ -15,60 +13,40 @@ rm -rf .git && git init
 composer create-project laravel/laravel .
 ```
 
-Não use este meta-repo como base de app — ele serve para **gerar e manter** os templates.
+4. Registre a stack no ADR `docs/brain/3-resources/adrs/0001-escolha-de-stack.md`.
 
-## Catálogo de repos standalone
+**Não use** o meta-repo `repo-padrao` como base de aplicação.
 
-| Repositório | Linguagem | Quando clonar |
-|---|---|---|
-| `repo-padrao-base` | — | Só disciplina IA, sem stack definida |
-| `repo-padrao-laravel-vue` | PHP | Laravel + Inertia Vue (padrão) |
-| `repo-padrao-laravel-react` | PHP | Laravel + Inertia React |
-| `repo-padrao-laravel-svelte` | PHP | Laravel + Inertia Svelte |
-| `repo-padrao-jhipster-angular` | Java | JHipster + Angular |
-| `repo-padrao-jhipster-react` | Java | JHipster + React |
-| `repo-padrao-jhipster-vue` | Java | JHipster + Vue |
-| `repo-padrao-abp-angular` | .NET (C#) | ABP + Angular |
-| `repo-padrao-abp-react` | .NET (C#) | ABP + React modern |
-| `repo-padrao-abp-blazor` | .NET (C#) | ABP + Blazor |
-| `repo-padrao-abp-mvc` | .NET (C#) | ABP + MVC |
+## Catálogo rápido
 
-### Stacks secundárias (ocasionais)
-
-| Repositório | Linguagem | Quando clonar |
-|---|---|---|
-| `repo-padrao-django` | Python | Django + DRF |
-| `repo-padrao-nestjs` | TypeScript | NestJS API |
-| `repo-padrao-go-api` | Go | Go REST API |
-
-## Manutenção (mantenedores)
-
-Gerar/atualizar todos os standalone:
-
-```bash
-bash scripts/build-standalone-repos.sh --clean
-```
-
-Stacks fonte em `stacks/` — cada pasta indica a linguagem no `README.md` (`laravel` PHP, `jhipster` Java, `abp` .NET, `django` Python, `nestjs` TypeScript, `go-api` Go).
-
-Guias: [`docs/stacks/LARAVEL.md`](stacks/LARAVEL.md), [`JHIPSTER.md`](stacks/JHIPSTER.md), [`ABP.md`](stacks/ABP.md), [`DJANGO.md`](stacks/DJANGO.md), [`NESTJS.md`](stacks/NESTJS.md), [`GO.md`](stacks/GO.md).
-
-## Assistentes suportados
-
-| Assistente | Lê automaticamente |
+| Linguagem | Templates GitHub |
 |---|---|
-| Cursor | `.cursor/rules/*.mdc`, `.cursor/skills/`, `.cursor/plugins/` |
+| Agnóstico | [repo-padrao-base](https://github.com/filipefalcaofs/repo-padrao-base) |
+| PHP | [vue](https://github.com/filipefalcaofs/repo-padrao-laravel-vue) · [react](https://github.com/filipefalcaofs/repo-padrao-laravel-react) · [svelte](https://github.com/filipefalcaofs/repo-padrao-laravel-svelte) |
+| Java | [angular](https://github.com/filipefalcaofs/repo-padrao-jhipster-angular) · [react](https://github.com/filipefalcaofs/repo-padrao-jhipster-react) · [vue](https://github.com/filipefalcaofs/repo-padrao-jhipster-vue) |
+| .NET (C#) | [angular](https://github.com/filipefalcaofs/repo-padrao-abp-angular) · [react](https://github.com/filipefalcaofs/repo-padrao-abp-react) · [blazor](https://github.com/filipefalcaofs/repo-padrao-abp-blazor) · [mvc](https://github.com/filipefalcaofs/repo-padrao-abp-mvc) |
+| Python | [django](https://github.com/filipefalcaofs/repo-padrao-django) |
+| TypeScript | [nestjs](https://github.com/filipefalcaofs/repo-padrao-nestjs) |
+| Go | [go-api](https://github.com/filipefalcaofs/repo-padrao-go-api) |
+
+Detalhes, variantes e bootstrap: [**CLONAGEM_POR_LINGUAGEM.md**](CLONAGEM_POR_LINGUAGEM.md).
+
+## O que vem em todo template
+
+- **Superpowers** — plugin + rule obrigatória (TDD, brainstorming, debugging)
+- **Rules universais** — pt-BR, git, comunicação, Docker
+- **Stack** — rules e skills específicas já na raiz
+- **Segundo cérebro** — `docs/brain/`
+
+## Assistentes
+
+| Assistente | Lê |
+|---|---|
+| Cursor | `.cursor/rules/`, `.cursor/skills/`, `.cursor/plugins/superpowers/` |
 | Claude Code | `CLAUDE.md`, `.claude/skills/` |
 | GitHub Copilot | `.github/copilot-instructions.md` |
-| OpenAI Codex CLI | `AGENTS.md`, `.codex/skills/` |
-| Jules / Aider / Continue / outros | `AGENTS.md` |
+| Codex / outros | `AGENTS.md`, `.codex/skills/` |
 
-## Segundo cérebro
+## Mantenedor do factory
 
-Estrutura em `docs/brain/`. Primeiro ADR recomendado: copiar `docs/brain/3-resources/adrs/0000-template.md` → `0001-escolha-de-stack.md`.
-
-Detalhes em [`docs/brain/README.md`](brain/README.md).
-
-## Publicar standalone no GitHub
-
-Ver [`repos/README.md`](../repos/README.md).
+Ver [**MANUTENCAO.md**](MANUTENCAO.md) e [**docs/README.md**](README.md).

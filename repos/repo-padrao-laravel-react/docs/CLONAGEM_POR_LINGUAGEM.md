@@ -14,7 +14,7 @@ Escolha o repositório **standalone** pela linguagem (e frontend, quando houver)
 | **Python** | [`repo-padrao-django`](https://github.com/filipefalcaofs/repo-padrao-django) | [`DJANGO.md`](stacks/DJANGO.md) |
 | **TypeScript** | [`repo-padrao-nestjs`](https://github.com/filipefalcaofs/repo-padrao-nestjs) | [`NESTJS.md`](stacks/NESTJS.md) |
 | **Go** | [`repo-padrao-go-api`](https://github.com/filipefalcaofs/repo-padrao-go-api) | [`GO.md`](stacks/GO.md) |
-| **Indefinida** | [`repo-padrao-base`](https://github.com/filipefalcaofs/repo-padrao-base) | — |
+| **Agnóstico** | [`repo-padrao-base`](https://github.com/filipefalcaofs/repo-padrao-base) | — |
 
 ---
 
@@ -145,7 +145,7 @@ Guia completo: [`docs/stacks/GO.md`](stacks/GO.md).
 
 ---
 
-## Sem linguagem definida — base agnóstica
+## Agnóstico — sem stack definida
 
 **Quando usar:** ainda não escolheu stack, ou quer só Superpowers + segundo cérebro + rules universais.
 
