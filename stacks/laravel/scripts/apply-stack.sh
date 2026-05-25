@@ -30,7 +30,7 @@ if [[ -d "$STACK/.ai" ]]; then
   cp -R "$STACK/.ai/skills/." "$TARGET/.ai/skills/" 2>/dev/null || true
 fi
 
-for skill in laravel-best-practices laravel-boost pest-testing; do
+for skill in laravel-best-practices laravel-boost pest-testing inertia-vue-development inertia-react-development inertia-svelte-development; do
   if [[ -d "$STACK/.cursor/skills/$skill" ]]; then
     cp -R "$STACK/.cursor/skills/$skill" "$TARGET/.claude/skills/"
     cp -R "$STACK/.cursor/skills/$skill" "$TARGET/.codex/skills/"

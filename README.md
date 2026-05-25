@@ -134,8 +134,9 @@ Projetos PHP/Laravel já incluem **rules e skills** baseadas na documentação [
 
 | Recurso | Caminho |
 |---|---|
-| Rules Cursor | `.cursor/rules/laravel-core.mdc`, `laravel-boost.mdc` |
-| Skills | `laravel-best-practices`, `laravel-boost`, `pest-testing` |
+| Rules Cursor | `.cursor/rules/laravel-core.mdc`, `laravel-boost.mdc`, `laravel-inertia.mdc` |
+| Skills backend | `laravel-best-practices`, `laravel-boost`, `pest-testing` |
+| Skills Inertia | `inertia-vue-development`, `inertia-react-development`, `inertia-svelte-development` |
 | Stack completo | [`stacks/laravel/`](stacks/laravel/) |
 | Guia | [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md) |
 
@@ -168,7 +169,7 @@ Algumas skills só fazem sentido em projetos com a stack correspondente. Se o se
 | `.cursor/plugins/cache/cursor-public/figma/` | Projetos com integração Figma | `rm -rf .cursor/plugins/cache/cursor-public/figma/` |
 | `.cursor/skills/video-editor/` | Projetos de edição de vídeo | `rm -rf .cursor/skills/video-editor/` |
 | `.cursor/skills/contagem-ponto-funcao/` | Contratos públicos brasileiros (TRT, TJ, etc.) | `rm -rf .cursor/skills/contagem-ponto-funcao/` |
-| `.cursor/rules/laravel-*.mdc` e skills `laravel-*`, `pest-testing` | Projetos Laravel | Ver [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md) |
+| `.cursor/rules/laravel-*.mdc` e skills `laravel-*`, `pest-testing`, `inertia-*` | Projetos Laravel + Inertia | Ver [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md) |
 | `stacks/laravel/.cursor/skills/livewire-development` | Livewire 4 | `rm -rf stacks/laravel/.cursor/skills/livewire-development` |
 | `stacks/laravel/.cursor/skills/tailwindcss-development` | Tailwind CSS | `rm -rf stacks/laravel/.cursor/skills/tailwindcss-development` |
 

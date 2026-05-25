@@ -8,9 +8,13 @@ Stack de **skills, rules e guidelines** para projetos [Laravel 12/13](https://la
 |---|---|
 | `.cursor/rules/laravel-core.mdc` | Convenções Laravel (Artisan, Eloquent, estrutura 11+) |
 | `.cursor/rules/laravel-boost.mdc` | MCP Boost, `search-docs`, ferramentas |
+| `.cursor/rules/laravel-inertia.mdc` | Inertia.js v2 — server-side + qual skill frontend usar |
 | `.cursor/skills/laravel-best-practices/` | Skill oficial Laravel Boost (20+ regras) |
 | `.cursor/skills/laravel-boost/` | Quando e como usar o MCP |
 | `.cursor/skills/pest-testing/` | Testes Pest em Laravel |
+| `.cursor/skills/inertia-vue-development/` | Inertia v2 + Vue 3 (padrão) |
+| `.cursor/skills/inertia-react-development/` | Inertia v2 + React |
+| `.cursor/skills/inertia-svelte-development/` | Inertia v2 + Svelte |
 | `.cursor/skills/livewire-development/` | Opcional — projetos Livewire 4 |
 | `.cursor/skills/tailwindcss-development/` | Opcional — Tailwind v3/v4 |
 | `.ai/guidelines/` | Fonte compatível com `php artisan boost:install` |
@@ -54,7 +58,15 @@ php artisan boost:install
 
 ## Skills opcionais
 
-Remova se não usar a tecnologia:
+Frontend padrão: **Inertia.js v2**. Mantenha apenas a skill do adapter que o projeto usa:
+
+```bash
+# Exemplo: stack Vue (padrão) — remover React e Svelte se não usar
+rm -rf .cursor/skills/inertia-react-development
+rm -rf .cursor/skills/inertia-svelte-development
+```
+
+Outras skills opcionais:
 
 ```bash
 rm -rf .cursor/skills/livewire-development

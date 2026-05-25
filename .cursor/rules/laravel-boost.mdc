@@ -45,6 +45,7 @@ Preferir ferramentas Boost em vez de shell manual quando o MCP estiver ativo:
 - `laravel-boost` — ferramentas MCP e fluxo de debug
 - `laravel-best-practices` — padrões PHP/Laravel
 - `pest-testing` — testes Pest
+- `inertia-vue-development` / `inertia-react-development` / `inertia-svelte-development` — frontend Inertia (padrão do template)
 
 ## Atualização
 

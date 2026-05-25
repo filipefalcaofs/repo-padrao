@@ -80,7 +80,7 @@ Algumas skills só fazem sentido em projetos com stack correspondente. Se o seu 
 | `.cursor/plugins/cache/cursor-public/figma/` | Projetos com Figma | `rm -rf .cursor/plugins/cache/cursor-public/figma/` |
 | `.cursor/skills/video-editor/` | Edição de vídeo | `rm -rf .cursor/skills/video-editor/` |
 | `.cursor/skills/contagem-ponto-funcao/` | Contratos públicos brasileiros (APF/IFPUG) | `rm -rf .cursor/skills/contagem-ponto-funcao/` |
-| `.cursor/rules/laravel-*.mdc`, skills `laravel-*`, `pest-testing` | Projetos Laravel | Ver [`stacks/LARAVEL.md`](stacks/LARAVEL.md) |
+| `.cursor/rules/laravel-*.mdc`, skills `laravel-*`, `pest-testing`, `inertia-*` | Projetos Laravel + Inertia | Ver [`stacks/LARAVEL.md`](stacks/LARAVEL.md) |
 
 As demais skills (Superpowers, Laravel, debugging, etc.) são úteis em qualquer projeto.
 
