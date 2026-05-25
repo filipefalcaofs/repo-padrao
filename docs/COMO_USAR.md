@@ -29,6 +29,34 @@ git push -u origin main
 - Ajustar `.gitignore` se houver artefatos específicos da sua stack (ex: `*.lockb`, `target/`, `.terraform/`).
 - Adicionar `package.json`/`composer.json`/`pyproject.toml` conforme a stack escolhida.
 
+### Projetos Laravel — escolher adapter Inertia
+
+O template **não** traz as três skills Inertia instaladas ao mesmo tempo. Após clonar, escolha Vue, React ou Svelte:
+
+```bash
+./stacks/laravel/scripts/choose-inertia-adapter.sh
+```
+
+Menu interativo:
+
+```
+  1) Vue 3     (@inertiajs/vue3)     — recomendado
+  2) React     (@inertiajs/react)
+  3) Svelte    (@inertiajs/svelte)
+```
+
+Modo não interativo (CI ou script):
+
+```bash
+./stacks/laravel/scripts/choose-inertia-adapter.sh --adapter vue --yes
+./stacks/laravel/scripts/choose-inertia-adapter.sh --adapter react --yes
+./stacks/laravel/scripts/choose-inertia-adapter.sh --adapter svelte --yes
+```
+
+Gera `.laravel-stack.json` e instala a skill só do adapter escolhido em `.cursor/`, `.claude/` e `.codex/`.
+
+Guia completo: [`docs/stacks/LARAVEL.md`](stacks/LARAVEL.md).
+
 ## 3. Iniciar o segundo cérebro
 
 A pasta `docs/brain/` já está pronta. Comece capturando ideias em `docs/brain/inbox/` e organize semanalmente. Detalhes em [`docs/brain/README.md`](brain/README.md).

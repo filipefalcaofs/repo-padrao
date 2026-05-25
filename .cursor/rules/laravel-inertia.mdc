@@ -23,7 +23,7 @@ Padrão frontend deste template: **Inertia.js v2** com adapter Vue, React ou Sve
 | React (`@inertiajs/react`) | `inertia-react-development` |
 | Svelte (`@inertiajs/svelte`) | `inertia-svelte-development` |
 
-Ativar a skill do **framework instalado no projeto**. Se o stack padrão for Vue, preferir `inertia-vue-development` em páginas `.vue` em `resources/js/Pages/`.
+Ativar a skill indicada em `.laravel-stack.json` (`inertia_adapter`: `vue` | `react` | `svelte`). Se o arquivo não existir, rodar `./stacks/laravel/scripts/choose-inertia-adapter.sh` após clonar.
 
 ## Inertia v2 (padrão)
 

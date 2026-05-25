@@ -14,7 +14,7 @@ Este projeto pode usar qualquer linguagem (Node, Python, Go, Rust, Java, PHP, Ru
 - Conventional Commits, debugging sistemático, brainstorming, verificação antes de concluir, segundo cérebro e regras git são universais.
 - A seção Docker (item 8) **só se aplica se o projeto usa containers**. Ignore-a em projetos que rodam direto na máquina.
 - Algumas skills em `.claude/skills/`, `.cursor/skills/` e `.cursor/plugins/` são específicas de stack (Vue.js, Figma, vídeo, contagem APF, **Laravel Boost**). Use apenas as que se aplicam ao projeto atual; o restante pode ser removido sem prejuízo.
-- Projetos **Laravel**: instalar `laravel/boost`, habilitar MCP `laravel-boost`, usar rules `laravel-core`/`laravel-boost`/`laravel-inertia` e skills `laravel-best-practices`, `pest-testing`, `inertia-*`. Frontend padrão: **Inertia.js v2 + Vue 3**. Ver [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md).
+- Projetos **Laravel**: após clonar, `./stacks/laravel/scripts/choose-inertia-adapter.sh` (Vue, React ou Svelte). Depois `laravel/boost`, rules `laravel-*` e skill Inertia escolhida. Ver [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md).
 - **Superpowers** ([obra/superpowers](https://github.com/obra/superpowers)): plugin em `.cursor/plugins/superpowers/`; rule `.cursor/rules/superpowers.mdc`. Invocar skills do plugin (brainstorming, TDD, systematic-debugging, etc.) — não usar GSD.
 
 ## 1. Idioma

@@ -2,12 +2,48 @@
 set -euo pipefail
 
 # Aplica o stack Laravel do repo-padrao na raiz do projeto atual.
-# Uso: ./stacks/laravel/scripts/apply-stack.sh
-#      ou, a partir da raiz do repo-padrao clonado: bash stacks/laravel/scripts/apply-stack.sh
+#
+# Uso:
+#   bash stacks/laravel/scripts/apply-stack.sh
+#   bash stacks/laravel/scripts/apply-stack.sh /caminho/do/laravel
+#   bash stacks/laravel/scripts/apply-stack.sh . --adapter vue
+#
+# Variável de ambiente:
+#   INERTIA_ADAPTER=vue|react|svelte
 
-ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-STACK="$(cd "$(dirname "$0")/.." && pwd)"
-TARGET="${1:-$(pwd)}"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+STACK="$(cd "$SCRIPT_DIR/.." && pwd)"
+ROOT="$(cd "$STACK/../.." && pwd)"
+
+TARGET=""
+ADAPTER="${INERTIA_ADAPTER:-}"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --adapter)
+      ADAPTER="${2:?}"
+      shift 2
+      ;;
+    --yes)
+      shift
+      ;;
+    -h|--help)
+      echo "Uso: apply-stack.sh [TARGET] [--adapter vue|react|svelte]"
+      exit 0
+      ;;
+    *)
+      if [[ -z "$TARGET" ]]; then
+        TARGET="$1"
+      else
+        echo "Argumento desconhecido: $1" >&2
+        exit 1
+      fi
+      shift
+      ;;
+  esac
+done
+
+TARGET="${TARGET:-$(pwd)}"
 
 if [[ ! -d "$STACK/.cursor" ]]; then
   echo "Erro: stack Laravel não encontrado em $STACK" >&2
@@ -23,14 +59,20 @@ mkdir -p "$TARGET/.ai/guidelines" "$TARGET/.ai/skills"
 mkdir -p "$TARGET/.claude/skills" "$TARGET/.codex/skills"
 
 cp -R "$STACK/.cursor/rules/." "$TARGET/.cursor/rules/"
-cp -R "$STACK/.cursor/skills/." "$TARGET/.cursor/skills/"
+
+# Backend + utilitários (sem Inertia — escolhido depois)
+for skill in laravel-best-practices laravel-boost pest-testing livewire-development tailwindcss-development; do
+  if [[ -d "$STACK/.cursor/skills/$skill" ]]; then
+    cp -R "$STACK/.cursor/skills/$skill" "$TARGET/.cursor/skills/"
+  fi
+done
 
 if [[ -d "$STACK/.ai" ]]; then
   cp -R "$STACK/.ai/guidelines/." "$TARGET/.ai/guidelines/" 2>/dev/null || true
   cp -R "$STACK/.ai/skills/." "$TARGET/.ai/skills/" 2>/dev/null || true
 fi
 
-for skill in laravel-best-practices laravel-boost pest-testing inertia-vue-development inertia-react-development inertia-svelte-development; do
+for skill in laravel-best-practices laravel-boost pest-testing; do
   if [[ -d "$STACK/.cursor/skills/$skill" ]]; then
     cp -R "$STACK/.cursor/skills/$skill" "$TARGET/.claude/skills/"
     cp -R "$STACK/.cursor/skills/$skill" "$TARGET/.codex/skills/"
@@ -46,7 +88,6 @@ if [[ -f "$STACK/boost.json.example" ]] && [[ ! -f "$TARGET/boost.json" ]]; then
   cp "$STACK/boost.json.example" "$TARGET/boost.json"
 fi
 
-# .gitignore Laravel
 GITIGNORE_TEMPLATE="$ROOT/docs/templates-linguagem/gitignore-php-laravel.txt"
 if [[ -f "$GITIGNORE_TEMPLATE" ]]; then
   if ! grep -q "# Laravel (repo-padrao stack)" "$TARGET/.gitignore" 2>/dev/null; then
@@ -58,9 +99,17 @@ if [[ -f "$GITIGNORE_TEMPLATE" ]]; then
 fi
 
 echo ""
+echo "Escolhendo adapter Inertia.js..."
+if [[ -n "$ADAPTER" ]]; then
+  bash "$SCRIPT_DIR/choose-inertia-adapter.sh" --adapter "$ADAPTER" --yes --target "$TARGET"
+else
+  bash "$SCRIPT_DIR/choose-inertia-adapter.sh" --target "$TARGET"
+fi
+
+echo ""
 echo "Stack Laravel aplicado."
 echo ""
-echo "Próximos passos no projeto Laravel:"
+echo "Próximos passos:"
 echo "  composer require laravel/boost --dev"
 echo "  php artisan boost:install"
 echo "  Habilitar laravel-boost em MCP Settings (Cursor)"

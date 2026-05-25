@@ -24,25 +24,26 @@ Stack de **skills, rules e guidelines** para projetos [Laravel 12/13](https://la
 
 ## Aplicar em um projeto
 
-### Opção A — Projeto já clonado de repo-padrao
-
-Skills e rules Laravel já estão em `.cursor/`. Basta instalar Boost no app:
+### Opção A — Clonou repo-padrao (recomendado)
 
 ```bash
-composer require laravel/boost --dev
-php artisan boost:install
-cp stacks/laravel/.mcp.json.example .mcp.json   # se ainda não existir
+cd meu-projeto
+./stacks/laravel/scripts/choose-inertia-adapter.sh
 ```
+
+Escolha Vue, React ou Svelte. Depois instale Boost no app Laravel.
 
 ### Opção B — Projeto Laravel existente
 
 ```bash
 git clone https://github.com/filipefalcaofs/repo-padrao.git /tmp/repo-padrao
 cd /caminho/do/seu/laravel
-bash /tmp/repo-padrao/stacks/laravel/scripts/apply-stack.sh
+bash /tmp/repo-padrao/stacks/laravel/scripts/apply-stack.sh . --adapter vue
 composer require laravel/boost --dev
 php artisan boost:install
 ```
+
+Substitua `--adapter vue` por `react` ou `svelte`. Sem `--adapter`, o script pergunta interativamente.
 
 ### Opção C — Novo projeto Laravel + repo-padrao
 
@@ -56,17 +57,17 @@ composer require laravel/boost --dev
 php artisan boost:install
 ```
 
+## Adapters Inertia disponíveis
+
+| Script | Skill |
+|---|---|
+| `--adapter vue` | `inertia-vue-development` |
+| `--adapter react` | `inertia-react-development` |
+| `--adapter svelte` | `inertia-svelte-development` |
+
+Todas ficam em `stacks/laravel/.cursor/skills/`; o projeto recebe **só a escolhida**.
+
 ## Skills opcionais
-
-Frontend padrão: **Inertia.js v2**. Mantenha apenas a skill do adapter que o projeto usa:
-
-```bash
-# Exemplo: stack Vue (padrão) — remover React e Svelte se não usar
-rm -rf .cursor/skills/inertia-react-development
-rm -rf .cursor/skills/inertia-svelte-development
-```
-
-Outras skills opcionais:
 
 ```bash
 rm -rf .cursor/skills/livewire-development

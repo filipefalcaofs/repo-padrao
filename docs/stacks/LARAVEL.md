@@ -30,13 +30,41 @@ composer create-project laravel/laravel .
 # ou: copiar app Laravel existente para a raiz
 ```
 
-### 2. .gitignore Laravel
+### 2. Escolher adapter Inertia (obrigatório)
+
+O template traz **Vue, React e Svelte disponíveis**, mas instala **apenas um** por projeto:
+
+```bash
+./stacks/laravel/scripts/choose-inertia-adapter.sh
+```
+
+| Opção | Adapter npm | Skill instalada |
+|---|---|---|
+| 1 (padrão) | `@inertiajs/vue3` | `inertia-vue-development` |
+| 2 | `@inertiajs/react` | `inertia-react-development` |
+| 3 | `@inertiajs/svelte` | `inertia-svelte-development` |
+
+Não interativo:
+
+```bash
+./stacks/laravel/scripts/choose-inertia-adapter.sh --adapter vue --yes
+```
+
+Salva `.laravel-stack.json` na raiz. Para trocar depois, rode o script novamente.
+
+Aplicar stack completo em projeto Laravel existente (rules + skills + escolha Inertia):
+
+```bash
+bash stacks/laravel/scripts/apply-stack.sh . --adapter vue
+```
+
+### 3. .gitignore Laravel
 
 ```bash
 cat docs/templates-linguagem/gitignore-php-laravel.txt >> .gitignore
 ```
 
-### 3. Laravel Boost
+### 4. Laravel Boost
 
 ```bash
 composer require laravel/boost --dev
@@ -54,7 +82,7 @@ cp stacks/laravel/boost.json.example boost.json
 
 Habilitar `laravel-boost` em **MCP Settings** no Cursor.
 
-### 4. Segundo cérebro
+### 5. Segundo cérebro
 
 Registrar stack no ADR:
 
@@ -63,7 +91,7 @@ cp docs/brain/3-resources/adrs/0000-template.md \
    docs/brain/3-resources/adrs/0001-stack-laravel.md
 ```
 
-### 5. Verificação
+### 6. Verificação
 
 ```bash
 php artisan test --compact
@@ -72,21 +100,26 @@ php artisan route:list
 
 No Cursor, confirmar que `laravel-boost` aparece em MCP Settings e que as rules `laravel-core`, `laravel-boost` e `laravel-inertia` estão ativas ao editar arquivos `.php` ou `resources/js/`.
 
-## Stack frontend padrão: Inertia.js
+## Stack frontend: Inertia.js
 
-Pacotes típicos:
+Adapter definido em `.laravel-stack.json`. Pacotes Composer (todos):
 
 ```bash
 composer require inertiajs/inertia-laravel
 php artisan inertia:middleware
-npm install @inertiajs/vue3 vue @vitejs/plugin-vue
 ```
 
-Adapters alternativos: `@inertiajs/react` ou `@inertiajs/svelte` — use a skill Inertia correspondente e remova as outras.
+Pacotes npm conforme adapter escolhido:
+
+| Adapter | Comando |
+|---|---|
+| Vue | `npm install @inertiajs/vue3 vue @vitejs/plugin-vue` |
+| React | `npm install @inertiajs/react react react-dom @vitejs/plugin-react` |
+| Svelte | `npm install @inertiajs/svelte svelte @sveltejs/vite-plugin-svelte` |
 
 ## Skills incluídas
 
-### Backend
+### Backend (sempre)
 
 | Skill | Ativar quando |
 |---|---|
@@ -94,15 +127,21 @@ Adapters alternativos: `@inertiajs/react` ou `@inertiajs/svelte` — use a skill
 | `laravel-boost` | Debug, schema, rotas, logs, `search-docs` |
 | `pest-testing` | Qualquer trabalho em `tests/` |
 
-### Frontend (Inertia.js v2 — padrão)
+### Frontend Inertia (uma por projeto)
 
-| Skill | Ativar quando |
+Após `choose-inertia-adapter.sh`, só a skill do adapter escolhido fica em `.cursor/skills/`:
+
+| Adapter | Skill |
 |---|---|
-| `inertia-vue-development` | Pages Vue em `resources/js/Pages/`, `<Link>`, `<Form>`, `useForm` |
-| `inertia-react-development` | Pages React com Inertia |
-| `inertia-svelte-development` | Pages Svelte com Inertia |
+| Vue | `inertia-vue-development` |
+| React | `inertia-react-development` |
+| Svelte | `inertia-svelte-development` |
 
-Rule `laravel-inertia.mdc` orienta qual skill usar por adapter. **Stack padrão: Vue 3** — remova skills dos outros adapters se não usar.
+Rule `laravel-inertia.mdc` lê `.laravel-stack.json` para saber qual skill usar.
+
+### Catálogo completo (em `stacks/laravel/.cursor/skills/`)
+
+Vue, React e Svelte ficam no stack fonte; o script copia apenas a escolhida.
 
 ### Opcionais
 

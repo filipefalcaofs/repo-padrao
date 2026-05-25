@@ -28,6 +28,18 @@ git push -u origin main
 
 Detalhes completos em [`docs/COMO_USAR.md`](docs/COMO_USAR.md).
 
+### Projetos Laravel + Inertia
+
+Após clonar, escolha o adapter frontend (Vue, React ou Svelte):
+
+```bash
+./stacks/laravel/scripts/choose-inertia-adapter.sh
+# ou não interativo:
+./stacks/laravel/scripts/choose-inertia-adapter.sh --adapter vue --yes
+```
+
+Isso instala **apenas** a skill Inertia escolhida e grava `.laravel-stack.json`. Ver [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md).
+
 ## Assistentes suportados
 
 | Assistente | Lê automaticamente |
@@ -136,7 +148,7 @@ Projetos PHP/Laravel já incluem **rules e skills** baseadas na documentação [
 |---|---|
 | Rules Cursor | `.cursor/rules/laravel-core.mdc`, `laravel-boost.mdc`, `laravel-inertia.mdc` |
 | Skills backend | `laravel-best-practices`, `laravel-boost`, `pest-testing` |
-| Skills Inertia | `inertia-vue-development`, `inertia-react-development`, `inertia-svelte-development` |
+| Skills Inertia | escolher no clone — `inertia-vue-development`, `inertia-react-development` ou `inertia-svelte-development` |
 | Stack completo | [`stacks/laravel/`](stacks/laravel/) |
 | Guia | [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md) |
 
