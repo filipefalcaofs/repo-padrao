@@ -9,11 +9,14 @@ Factory de **templates de projeto** com Superpowers, rules, skills e segundo cé
 | Perfil | Documento |
 |---|---|
 | Desenvolvedor — escolher e clonar template | [**docs/CLONAGEM_POR_LINGUAGEM.md**](docs/CLONAGEM_POR_LINGUAGEM.md) |
+| Catálogo completo (42 atuais + 14 legados) | [**docs/REPOSITORIOS.md**](docs/REPOSITORIOS.md) |
 | Visão geral e catálogo | [**docs/COMO_USAR.md**](docs/COMO_USAR.md) |
 | Índice de toda documentação | [**docs/README.md**](docs/README.md) |
 | Mantenedor do factory | [**docs/MANUTENCAO.md**](docs/MANUTENCAO.md) |
 
-## Templates no GitHub (42 repos)
+## Templates no GitHub
+
+**42 repos atuais** (`repo-padrao-{stack}-{cursor|claude|codex}`) + **14 legados** (`repo-padrao-{stack}`) catalogados em [**docs/REPOSITORIOS.md**](docs/REPOSITORIOS.md).
 
 Convenção: `repo-padrao-{stack}-{cursor|claude|codex}` — **somente** os arquivos da stack e da IDE escolhidas.
 
@@ -47,6 +50,7 @@ Este repositório é a **fonte do factory** — não é base de aplicação.
 repo-padrao/
 ├── docs/                 Documentação (comece em docs/README.md)
 │   ├── CLONAGEM_POR_LINGUAGEM.md
+│   ├── REPOSITORIOS.md   Catálogo GitHub (42 + 14 legados)
 │   ├── COMO_USAR.md
 │   ├── MANUTENCAO.md
 │   ├── brain/            Segundo cérebro (copiado nos templates)
