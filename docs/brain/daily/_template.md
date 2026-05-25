@@ -1,7 +1,6 @@
 ---
 data: YYYY-MM-DD
 projeto_ativo: <nome do projeto principal do dia>
-fase_gsd: <ex: phase-03-checkout> # opcional
 ---
 
 # YYYY-MM-DD

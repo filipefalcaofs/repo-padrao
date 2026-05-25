@@ -2,7 +2,7 @@
 
 ## Fonte de verdade
 
-Todas as diretrizes do projeto (idioma, comunicação, TDD, debugging, GSD, Docker, segundo cérebro, git) estão em **[../AGENTS.md](../AGENTS.md)**. Esse arquivo é a referência completa.
+Todas as diretrizes do projeto (idioma, comunicação, TDD, debugging, Superpowers, Docker, segundo cérebro, git) estão em **[../AGENTS.md](../AGENTS.md)**. Esse arquivo é a referência completa.
 
 Este documento existe para que o Copilot (Chat e Code Completion) siga os mesmos padrões dos outros agentes do projeto.
 

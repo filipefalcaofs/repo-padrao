@@ -12,9 +12,10 @@ Este projeto pode usar qualquer linguagem (Node, Python, Go, Rust, Java, PHP, Ru
 
 - TDD vale para qualquer linguagem (use o framework de teste idiomático: vitest/jest, pytest, go test, cargo test, JUnit, PHPUnit, RSpec, ExUnit, XCTest, etc.).
 - Conventional Commits, debugging sistemático, brainstorming, verificação antes de concluir, segundo cérebro e regras git são universais.
-- A seção Docker (item 9) **só se aplica se o projeto usa containers**. Ignore-a em projetos que rodam direto na máquina.
+- A seção Docker (item 8) **só se aplica se o projeto usa containers**. Ignore-a em projetos que rodam direto na máquina.
 - Algumas skills em `.claude/skills/`, `.cursor/skills/` e `.cursor/plugins/` são específicas de stack (Vue.js, Figma, vídeo, contagem APF, **Laravel Boost**). Use apenas as que se aplicam ao projeto atual; o restante pode ser removido sem prejuízo.
 - Projetos **Laravel**: instalar `laravel/boost`, habilitar MCP `laravel-boost`, usar rules `laravel-core`/`laravel-boost` e skills `laravel-best-practices`, `pest-testing`. Ver [`docs/stacks/LARAVEL.md`](docs/stacks/LARAVEL.md).
+- **Superpowers** ([obra/superpowers](https://github.com/obra/superpowers)): plugin em `.cursor/plugins/superpowers/`; rule `.cursor/rules/superpowers.mdc`. Invocar skills do plugin (brainstorming, TDD, systematic-debugging, etc.) — não usar GSD.
 
 ## 1. Idioma
 
@@ -140,37 +141,7 @@ Antes de criar features, componentes ou modificar comportamento relevante:
 
 Não existe tarefa **simples demais** para pular essa etapa. O design pode ser curto, mas precisa existir antes da primeira linha de código.
 
-## 8. Workflow GSD (Get Stuff Done)
-
-Este projeto usa o framework **GSD** para gestão de execução. Se a pasta `.planning/` existir, ela é a **fonte de verdade** sobre o que está sendo feito:
-
-| Arquivo | Conteúdo |
-|---|---|
-| `.planning/PROJECT.md` | Visão e requisitos do projeto |
-| `.planning/ROADMAP.md` | Fases planejadas e status |
-| `.planning/STATE.md` | Contexto atual, onde parou, decisões recentes |
-| `.planning/REQUIREMENTS.md` | Requisitos com IDs rastreáveis |
-
-**Sempre consultar esses arquivos antes de agir** se eles existirem.
-
-Comandos GSD comuns (executados via skill quando o agente os suporta):
-
-```
-/gsd-new-project      — inicializar .planning/ em projeto novo
-/gsd-map-codebase     — mapear codebase existente sem .planning/
-/gsd-plan-phase N     — criar plano detalhado da fase N
-/gsd-execute-phase N  — executar a fase N
-/gsd-progress         — checar status atual
-/gsd-resume-work      — retomar trabalho após pausa
-/gsd-fast "tarefa"    — tarefa trivial (≤3 arquivos)
-/gsd-quick            — tarefa pequena com garantias mínimas
-/gsd-debug "bug"      — debugging com persistência entre sessões
-/gsd-ship N           — criar PR da fase N completa
-```
-
-Agente que não tenha suporte nativo a essas skills deve **simular** o fluxo: ler `.planning/`, propor um plano, executar, atualizar `STATE.md` ao final.
-
-## 9. Docker e Deploy
+## 8. Docker e Deploy
 
 > **Aplicável apenas se o projeto usa Docker.** Em projetos que rodam diretamente na máquina (scripts Python, binários Go, etc.), ignore esta seção inteira.
 
@@ -204,7 +175,7 @@ buildx --platform linux/amd64 --push  →  commit do compose no main  →  Porta
 
 Variáveis sensíveis **nunca** vão hardcoded na imagem.
 
-## 10. Segundo Cérebro (PARA + CODE)
+## 9. Segundo Cérebro (PARA + CODE)
 
 Conhecimento do projeto vive em **`docs/brain/`**, organizado pelo método **PARA** de Tiago Forte:
 
@@ -225,7 +196,7 @@ Conhecimento do projeto vive em **`docs/brain/`**, organizado pelo método **PAR
 - **Antes de qualquer decisão arquitetural relevante**, ler os ADRs existentes em `docs/brain/3-resources/adrs/`. Não repita decisões já tomadas.
 - **Após tomar uma decisão arquitetural**, registrar um novo ADR usando o template em `docs/brain/3-resources/adrs/0000-template.md`.
 - **Pesquisas técnicas** que ultrapassam consulta rápida vão em `docs/brain/3-resources/pesquisas/`.
-- **Aprendizados de fase GSD** ao concluir uma fase devem ser destilados para `docs/brain/`.
+- **Aprendizados relevantes** ao concluir uma entrega devem ser destilados para `docs/brain/`.
 
 ### CODE (capture, organize, distill, express)
 
@@ -233,15 +204,12 @@ Conhecimento do projeto vive em **`docs/brain/`**, organizado pelo método **PAR
 inbox/  →  1-4 (PARA)  →  destilação  →  PR/release/docs
 ```
 
-`.planning/` (GSD) é gestão de **execução**. `docs/brain/` (BASB) é gestão de **conhecimento**. Coexistem.
-
-## 11. Git
+## 10. Git
 
 **Nunca versionar:**
 - `.env` ou qualquer arquivo de variável de ambiente com valores reais
 - `node_modules/`, `vendor/`, `__pycache__/`
 - `test-results/`, `playwright-report/`, `coverage/`
-- `.planning/` (gestão de execução é local de cada checkout)
 - Arquivos de build (`dist/`, `.next/`, `.nuxt/`, `build/`)
 - Credenciais, chaves de API, certificados (`*.pem`, `*.key`, `credentials.json`)
 
@@ -256,14 +224,14 @@ inbox/  →  1-4 (PARA)  →  destilação  →  PR/release/docs
 - Testes passam.
 - Diff completo revisado.
 
-## 12. Estrutura do Projeto
+## 11. Estrutura do Projeto
 
 ```
 .cursor/
   rules/                  Regras nativas Cursor (.mdc) — Cursor lê automaticamente
-  skills/                 Skills GSD/cursor-públicas
+  skills/                 Skills de stack e utilitários
   skills-cursor/          Skills internas Cursor
-  plugins/                Cache de skills compartilhadas (superpowers, figma)
+  plugins/                Superpowers e cache de skills compartilhadas
 .claude/
   skills/                 Skills Claude Code — Claude lê automaticamente
 .codex/
@@ -282,7 +250,7 @@ README.md                 Documentação do projeto
 
 Agentes **sem suporte nativo** a skills/`.mdc`/copilot-instructions devem ler **apenas** este `AGENTS.md` — ele contém tudo que importa.
 
-## 13. Resumo executivo
+## 12. Resumo executivo
 
 Se você só vai ler 5 frases:
 

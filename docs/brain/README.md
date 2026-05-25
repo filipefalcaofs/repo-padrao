@@ -46,18 +46,11 @@ PR / commit / release / docs          ← Express
 4-archive/                            ← Quando concluído
 ```
 
-## Como integra com o GSD
+## Manutenção
 
-| Pasta | Responsabilidade |
-|---|---|
-| `.planning/` (GSD) | **Gestão de execução** — roadmap, fases, planos, estado atual, requisitos |
-| `brain/` (BASB) | **Gestão de conhecimento** — decisões, pesquisas, aprendizados, referências |
-
-As duas coexistem e se referenciam:
-
-- O `.planning/STATE.md` aponta para ADRs em `docs/brain/3-resources/adrs/`.
-- Pesquisa de uma fase do GSD mora em `docs/brain/3-resources/pesquisas/` e é citada no `PLAN.md` da fase.
-- Quando uma fase termina, mova qualquer artefato de conhecimento útil dela para `docs/brain/` antes de arquivar.
+- **Semanal:** processar `inbox/` (esvaziar para 0).
+- **Por release:** revisar `1-projects/` e arquivar o que terminou; destilar aprendizados para `3-resources/`.
+- **Trimestral:** revisar `2-areas/` (padrões ainda fazem sentido?) e `3-resources/` (algo virou obsoleto?).
 
 ## Para os agentes de IA
 
@@ -69,9 +62,3 @@ Antes de qualquer decisão arquitetural, **leia** `docs/brain/3-resources/adrs/`
 - **Notas em geral:** `kebab-case.md` (sem espaços, sem acentos no nome de arquivo).
 - **Daily notes:** `YYYY-MM-DD.md` em `daily/`.
 - **TL;DR no topo** de toda nota com mais de 20 linhas.
-
-## Manutenção
-
-- **Semanal:** processar `inbox/` (esvaziar para 0).
-- **Por release:** revisar `1-projects/` e arquivar o que terminou.
-- **Trimestral:** revisar `2-areas/` (padrões ainda fazem sentido?) e `3-resources/` (algo virou obsoleto?).

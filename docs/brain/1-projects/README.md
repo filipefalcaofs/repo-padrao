@@ -36,6 +36,4 @@ Use o template:
 cp docs/brain/1-projects/_template.md docs/brain/1-projects/<nome-do-projeto>.md
 ```
 
-## Integração com GSD
-
-Cada **fase** do `.planning/` geralmente é um **projeto** aqui — a fase é o "como executar" e o projeto no `brain/` é o "por que/o que aprendemos". Referencie cruzado: o projeto aponta para a fase no GSD e vice-versa.
+Ao concluir, mova aprendizados relevantes para `3-resources/` e arquive em `4-archive/`.

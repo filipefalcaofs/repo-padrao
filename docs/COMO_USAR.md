@@ -29,19 +29,7 @@ git push -u origin main
 - Ajustar `.gitignore` se houver artefatos específicos da sua stack (ex: `*.lockb`, `target/`, `.terraform/`).
 - Adicionar `package.json`/`composer.json`/`pyproject.toml` conforme a stack escolhida.
 
-## 3. Iniciar o workflow GSD
-
-No seu assistente preferido (Cursor recomendado), rodar:
-
-```
-/gsd-new-project
-```
-
-Isso cria a estrutura `.planning/` com `PROJECT.md`, `ROADMAP.md`, `STATE.md`, `REQUIREMENTS.md` e `config.json`.
-
-Em projetos sem `.planning/`, use `/gsd-map-codebase` antes para mapear o código existente.
-
-## 4. Iniciar o segundo cérebro
+## 3. Iniciar o segundo cérebro
 
 A pasta `docs/brain/` já está pronta. Comece capturando ideias em `docs/brain/inbox/` e organize semanalmente. Detalhes em [`docs/brain/README.md`](brain/README.md).
 
@@ -51,7 +39,7 @@ Primeira ação recomendada: criar o ADR `0001` registrando a decisão de **stac
 cp docs/brain/3-resources/adrs/0000-template.md docs/brain/3-resources/adrs/0001-escolha-de-stack.md
 ```
 
-## 5. O que cada agente vê
+## 4. O que cada agente vê
 
 | Agente | Lê automaticamente |
 |---|---|
@@ -64,7 +52,7 @@ cp docs/brain/3-resources/adrs/0000-template.md docs/brain/3-resources/adrs/0001
 
 `AGENTS.md` é **auto-suficiente** — se um agente só lê esse arquivo, ainda assim seguirá todas as diretrizes do projeto.
 
-## 6. Customizando para sua linguagem
+## 5. Customizando para sua linguagem
 
 O template é **agnóstico de stack**. Ainda assim, há ajustes recomendados conforme a linguagem do projeto.
 
@@ -94,7 +82,7 @@ Algumas skills só fazem sentido em projetos com stack correspondente. Se o seu 
 | `.cursor/skills/contagem-ponto-funcao/` | Contratos públicos brasileiros (APF/IFPUG) | `rm -rf .cursor/skills/contagem-ponto-funcao/` |
 | `.cursor/rules/laravel-*.mdc`, skills `laravel-*`, `pest-testing` | Projetos Laravel | Ver [`stacks/LARAVEL.md`](stacks/LARAVEL.md) |
 
-As demais skills (GSD, Superpowers, debugging, etc.) são úteis em qualquer projeto.
+As demais skills (Superpowers, Laravel, debugging, etc.) são úteis em qualquer projeto.
 
 ### Projetos Laravel (Laravel Boost)
 
@@ -110,11 +98,11 @@ Habilitar `laravel-boost` no MCP Settings do Cursor. Invocar skills `/laravel-be
 
 ### Adaptando a seção Docker
 
-A [seção Docker do `AGENTS.md`](../AGENTS.md#9-docker-e-deploy) só se aplica se o projeto **usa containers**. Em projetos que rodam direto na máquina (scripts Python, binários Go compilados, executáveis .NET, etc.), os agentes devem **ignorar essa seção inteira**.
+A [seção Docker do `AGENTS.md`](../AGENTS.md#8-docker-e-deploy) só se aplica se o projeto **usa containers**. Em projetos que rodam direto na máquina (scripts Python, binários Go compilados, executáveis .NET, etc.), os agentes devem **ignorar essa seção inteira**.
 
-Se quiser deixar isso explícito no seu projeto, edite o `AGENTS.md` removendo a seção 9 ou substituindo-a por uma nota como `> Não aplicável a este projeto.`
+Se quiser deixar isso explícito no seu projeto, edite o `AGENTS.md` removendo a seção 8 ou substituindo-a por uma nota como `> Não aplicável a este projeto.`
 
-## 7. Manter o template atualizado
+## 6. Manter o template atualizado
 
 Se você atualizar uma regra global no seu setup (ex: `~/.cursor/rules/`), replique a mudança neste template para que projetos futuros nasçam atualizados:
 
@@ -128,22 +116,22 @@ git push
 
 Mesmo padrão vale para `.claude/skills/`, `.codex/skills/`, `.cursor/skills/` etc.
 
-## 8. Comandos GSD mais usados
+## 7. Superpowers ([obra/superpowers](https://github.com/obra/superpowers))
 
-```
-/gsd-progress             status atual do projeto
-/gsd-resume-work          retomar de onde parou
-/gsd-plan-phase N         planejar a fase N
-/gsd-execute-phase N      executar a fase N
-/gsd-fast "tarefa"        tarefa trivial (≤3 arquivos)
-/gsd-quick                tarefa pequena com garantias mínimas
-/gsd-debug "problema"     debugging com persistência
-/gsd-ship N               criar PR da fase N
-/gsd-note "ideia"         capturar nota rápida
-/gsd-add-todo "tarefa"    adicionar todo
-```
+Disciplina de código vem do plugin oficial **[Superpowers](https://github.com/obra/superpowers)** em `.cursor/plugins/superpowers/`. A rule `.cursor/rules/superpowers.mdc` reforça o uso em pt-BR.
 
-## 9. Convenções essenciais
+Skills principais — invocar quando relevante:
+
+- **brainstorming** — antes de implementar features
+- **test-driven-development** — ciclo Red-Green-Refactor
+- **systematic-debugging** — investigação de bugs
+- **verification-before-completion** — confirmar com evidência antes de afirmar sucesso
+- **writing-plans** / **executing-plans** — tarefas multi-step
+- **requesting-code-review** / **receiving-code-review** — revisão de código
+
+No Cursor, também é possível instalar/atualizar via marketplace: `/add-plugin superpowers`
+
+## 8. Convenções essenciais
 
 - **Idioma:** pt-BR em tudo voltado a humanos.
 - **Commits:** Conventional Commits em português, minúsculas, sem ponto final.

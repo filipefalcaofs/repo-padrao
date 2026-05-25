@@ -10,7 +10,7 @@ Template de repositório com **skills, rules e segundo cérebro** pré-instalado
 - **Regras específicas** por assistente (`CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules/*.mdc`).
 - **Skills** dos principais agentes já incluídas (`.cursor/skills/`, `.cursor/skills-cursor/`, `.cursor/plugins/`, `.claude/skills/`, `.codex/skills/`).
 - **Segundo cérebro** (`docs/brain/`) usando metodologia **PARA + CODE** (Tiago Forte) adaptada a projetos de software.
-- **Workflow GSD** (Get Stuff Done) integrado via skills do Cursor.
+- **Skills [Superpowers](https://github.com/obra/superpowers)** em `.cursor/plugins/superpowers/` (plugin oficial v5.x — TDD, brainstorming, debugging, code review).
 - `.editorconfig`, `.gitignore` e estrutura de `docs/` prontos.
 
 ## Como começar um projeto novo
@@ -52,7 +52,7 @@ Resumo das regras aplicadas pelo template (detalhes em [`AGENTS.md`](AGENTS.md))
 5. **Debugging sistemático** — investigar causa raiz antes de qualquer correção (4 fases).
 6. **Brainstorming antes de implementar** — explorar contexto, propor abordagens, obter aprovação.
 7. **Verificação antes de claim de conclusão** — rodar comando, ler output, só então afirmar.
-8. **Workflow GSD** — gestão de execução via `.planning/` e comandos `/gsd-*`.
+8. **Superpowers** — workflow oficial [obra/superpowers](https://github.com/obra/superpowers): TDD, brainstorming, debugging e code review via `.cursor/plugins/superpowers/`.
 9. **Docker** — sempre `docker buildx --platform linux/amd64` (dev é ARM, prod é AMD64).
 10. **Segundo cérebro** — conhecimento em `docs/brain/`, decisões arquiteturais em `docs/brain/3-resources/adrs/`.
 11. **Git** — nunca versionar `.env`, segredos, builds; nunca alterar `git config`.
@@ -63,9 +63,10 @@ Resumo das regras aplicadas pelo template (detalhes em [`AGENTS.md`](AGENTS.md))
 repo-padrao/
 ├── .cursor/
 │   ├── rules/                   Regras Cursor (.mdc) — lidas automaticamente
-│   ├── skills/                  Skills GSD e cursor-publicas
+│   ├── skills/                  Skills de stack e utilitários
 │   ├── skills-cursor/           Skills internas Cursor
-│   └── plugins/                 Cache de skills compartilhadas (superpowers, figma)
+│   └── plugins/
+│       └── superpowers/         Plugin oficial obra/superpowers (v5.x)
 ├── .claude/
 │   └── skills/                  Skills Claude Code
 ├── .codex/
@@ -101,6 +102,32 @@ A pasta `docs/brain/` aplica o método **PARA** (Projects, Areas, Resources, Arc
 
 **Para os agentes:** antes de toda decisão arquitetural, ler `docs/brain/3-resources/adrs/`. Após decidir, registrar um novo ADR.
 
+## Superpowers ([obra/superpowers](https://github.com/obra/superpowers))
+
+Disciplina de código vem do **[Superpowers](https://github.com/obra/superpowers)** de Jesse Vincent — não de skills customizadas nem de GSD.
+
+| Item | Caminho / detalhe |
+|---|---|
+| Plugin oficial | `.cursor/plugins/superpowers/` (cópia vendored do marketplace Cursor) |
+| Rule de enforcement | `.cursor/rules/superpowers.mdc` (resumo em pt-BR) |
+| Skills incluídas | `brainstorming`, `test-driven-development`, `systematic-debugging`, `verification-before-completion`, `writing-plans`, `executing-plans`, `subagent-driven-development`, `using-git-worktrees`, `requesting-code-review`, etc. |
+| Fonte upstream | https://github.com/obra/superpowers |
+
+### Instalação no Cursor
+
+O template **já inclui** o plugin. Em projetos novos no Cursor, você também pode instalar/atualizar direto do marketplace:
+
+```text
+/add-plugin superpowers
+```
+
+### Atualizar a cópia vendored
+
+```bash
+cp -R ~/.cursor/plugins/cache/cursor-public/superpowers/. .cursor/plugins/superpowers/
+# ou reinstalar via /add-plugin superpowers e copiar do cache local
+```
+
 ## Stack Laravel (Laravel Boost)
 
 Projetos PHP/Laravel já incluem **rules e skills** baseadas na documentação [AI Assisted Development — Laravel 13.x](https://laravel.com/docs/13.x/ai) e [Laravel Boost](https://laravel.com/docs/13.x/boost):
@@ -124,7 +151,7 @@ Habilitar `laravel-boost` em MCP Settings no Cursor.
 
 ## Adaptando para sua stack
 
-O template não impõe linguagem. Algumas peças são genéricas (regras, segundo cérebro, GSD, idioma, commits) e outras são específicas de stack — estas últimas podem ser removidas ou mantidas conforme o projeto.
+O template não impõe linguagem. Algumas peças são genéricas (regras, segundo cérebro, Superpowers, idioma, commits) e outras são específicas de stack — estas últimas podem ser removidas ou mantidas conforme o projeto.
 
 ### `.gitignore`
 
@@ -145,11 +172,11 @@ Algumas skills só fazem sentido em projetos com a stack correspondente. Se o se
 | `stacks/laravel/.cursor/skills/livewire-development` | Livewire 4 | `rm -rf stacks/laravel/.cursor/skills/livewire-development` |
 | `stacks/laravel/.cursor/skills/tailwindcss-development` | Tailwind CSS | `rm -rf stacks/laravel/.cursor/skills/tailwindcss-development` |
 
-As skills GSD, Superpowers, debugging e demais utilitários gerais permanecem úteis em qualquer projeto.
+As skills Superpowers, Laravel, debugging e demais utilitários gerais permanecem úteis em qualquer projeto.
 
 ### Docker
 
-A seção Docker em [`AGENTS.md`](AGENTS.md#9-docker-e-deploy) só se aplica se o projeto **usa containers**. Em projetos que rodam diretamente na máquina (scripts Python, binários Go compilados, etc.), agentes devem ignorar essa seção inteira.
+A seção Docker em [`AGENTS.md`](AGENTS.md#8-docker-e-deploy) só se aplica se o projeto **usa containers**. Em projetos que rodam diretamente na máquina (scripts Python, binários Go compilados, etc.), agentes devem ignorar essa seção inteira.
 
 ## Manutenção do template
 
@@ -160,7 +187,7 @@ cp ~/.cursor/rules/*.mdc .cursor/rules/
 cp -R ~/.cursor/skills/. .cursor/skills/
 cp -RL ~/.claude/skills/. .claude/skills/
 cp -R ~/.codex/skills/. .codex/skills/
-cp -R ~/.cursor/plugins/cache/cursor-public/. .cursor/plugins/
+cp -R ~/.cursor/plugins/cache/cursor-public/superpowers/. .cursor/plugins/superpowers/
 
 git add -A
 git commit -m "chore: atualiza skills e regras dos agentes"

@@ -3,7 +3,6 @@ nome: <Nome do projeto>
 status: ativo  # ativo | pausado | bloqueado | concluido | cancelado
 inicio: YYYY-MM-DD
 prazo: YYYY-MM-DD
-fase_gsd: <ex: phase-03-checkout> # opcional
 ---
 
 # <Nome do projeto>

@@ -6,7 +6,7 @@ Guia para usar o template `repo-padrao` em aplicações [Laravel 12/13](https://
 
 O repo-padrao combina:
 
-1. **Disciplina universal** — TDD, GSD, pt-BR, commits convencionais (`AGENTS.md`)
+1. **Disciplina universal** — TDD, Superpowers, pt-BR, commits convencionais (`AGENTS.md`)
 2. **Stack Laravel** — rules e skills baseadas no Laravel Boost
 3. **MCP laravel-boost** — introspecção da app, docs versionadas, schema de banco
 
@@ -54,11 +54,7 @@ cp stacks/laravel/boost.json.example boost.json
 
 Habilitar `laravel-boost` em **MCP Settings** no Cursor.
 
-### 4. GSD e segundo cérebro
-
-```
-/gsd-new-project
-```
+### 4. Segundo cérebro
 
 Registrar stack no ADR:
 
