@@ -231,7 +231,8 @@ inbox/  →  1-4 (PARA)  →  destilação  →  PR/release/docs
   rules/                  Regras nativas Cursor (.mdc) — Cursor lê automaticamente
   skills/                 Skills de stack e utilitários
   skills-cursor/          Skills internas Cursor
-  plugins/                Superpowers e cache de skills compartilhadas
+  plugins/
+    superpowers/          Plugin oficial obra/superpowers (https://github.com/obra/superpowers)
 .claude/
   skills/                 Skills Claude Code — Claude lê automaticamente
 .codex/
