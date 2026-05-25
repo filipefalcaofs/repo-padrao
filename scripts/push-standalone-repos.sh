@@ -50,7 +50,12 @@ push_repo() {
     if ! git remote get-url origin >/dev/null 2>&1; then
       git remote add origin "https://github.com/$OWNER/$name.git"
     fi
-    git push -u origin main
+    git fetch origin main 2>/dev/null || true
+    if git push -u origin main 2>/dev/null; then
+      :
+    else
+      git push --force origin main
+    fi
   else
     gh repo create "$OWNER/$name" \
       --private \
