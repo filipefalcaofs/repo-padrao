@@ -1,5 +1,7 @@
 # Stack ABP
 
+**Linguagem:** .NET (C#)
+
 Stack híbrido para projetos [ABP Framework](https://abp.io/): **rules oficiais** do [cursor-abp-plugin](https://github.com/abpframework/cursor-abp-plugin) + integração repo-padrao (MCP, escolha de UI, React modern).
 
 ## Conteúdo

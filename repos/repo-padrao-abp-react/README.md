@@ -1,5 +1,7 @@
 # repo-padrao-abp-react
 
+**Linguagem:** .NET (C#) · **UI:** react
+
 Template pronto para **ABP + react**.
 
 ## Clone

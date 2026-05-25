@@ -1,5 +1,7 @@
 # Stack JHipster
 
+**Linguagem:** Java (Spring Boot)
+
 Stack **custom** de **skills e rules** para projetos [JHipster 8+](https://www.jhipster.tech/) (Spring Boot + frontend Angular/React/Vue), integrado ao `repo-padrao`.
 
 > Não existe pacote oficial equivalente ao [Laravel Boost](https://laravel.com/docs/13.x/boost). Este stack documenta convenções JHipster para agentes de IA.

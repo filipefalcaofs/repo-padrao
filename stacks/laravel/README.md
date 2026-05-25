@@ -1,5 +1,7 @@
 # Stack Laravel
 
+**Linguagem:** PHP
+
 Stack de **skills, rules e guidelines** para projetos [Laravel 12/13](https://laravel.com/docs/13.x) com [Laravel Boost](https://laravel.com/docs/13.x/ai), integrado ao `repo-padrao`.
 
 ## Conteúdo

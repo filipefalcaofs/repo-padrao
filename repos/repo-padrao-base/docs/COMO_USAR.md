@@ -2,7 +2,9 @@
 
 ## Você quer iniciar um projeto?
 
-**Clone um repositório standalone** em [`repos/`](../repos/README.md) — stack e variantes já configuradas.
+**Escolha pela linguagem:** [`docs/CLONAGEM_POR_LINGUAGEM.md`](CLONAGEM_POR_LINGUAGEM.md) — guia com comando `git clone` e bootstrap por PHP, Java, .NET, Python, TypeScript ou Go.
+
+Ou clone um repositório standalone em [`repos/`](../repos/README.md) — stack e variantes já configuradas.
 
 Exemplo Laravel + Inertia Vue:
 
@@ -17,27 +19,27 @@ Não use este meta-repo como base de app — ele serve para **gerar e manter** o
 
 ## Catálogo de repos standalone
 
-| Repositório | Quando clonar |
-|---|---|
-| `repo-padrao-base` | Só disciplina IA, sem stack definida |
-| `repo-padrao-laravel-vue` | Laravel + Inertia Vue (padrão) |
-| `repo-padrao-laravel-react` | Laravel + Inertia React |
-| `repo-padrao-laravel-svelte` | Laravel + Inertia Svelte |
-| `repo-padrao-jhipster-angular` | Java JHipster + Angular |
-| `repo-padrao-jhipster-react` | Java JHipster + React |
-| `repo-padrao-jhipster-vue` | Java JHipster + Vue |
-| `repo-padrao-abp-angular` | .NET ABP + Angular |
-| `repo-padrao-abp-react` | .NET ABP + React modern |
-| `repo-padrao-abp-blazor` | .NET ABP + Blazor |
-| `repo-padrao-abp-mvc` | .NET ABP + MVC |
+| Repositório | Linguagem | Quando clonar |
+|---|---|---|
+| `repo-padrao-base` | — | Só disciplina IA, sem stack definida |
+| `repo-padrao-laravel-vue` | PHP | Laravel + Inertia Vue (padrão) |
+| `repo-padrao-laravel-react` | PHP | Laravel + Inertia React |
+| `repo-padrao-laravel-svelte` | PHP | Laravel + Inertia Svelte |
+| `repo-padrao-jhipster-angular` | Java | JHipster + Angular |
+| `repo-padrao-jhipster-react` | Java | JHipster + React |
+| `repo-padrao-jhipster-vue` | Java | JHipster + Vue |
+| `repo-padrao-abp-angular` | .NET (C#) | ABP + Angular |
+| `repo-padrao-abp-react` | .NET (C#) | ABP + React modern |
+| `repo-padrao-abp-blazor` | .NET (C#) | ABP + Blazor |
+| `repo-padrao-abp-mvc` | .NET (C#) | ABP + MVC |
 
 ### Stacks secundárias (ocasionais)
 
-| Repositório | Quando clonar |
-|---|---|
-| `repo-padrao-django` | Python Django + DRF |
-| `repo-padrao-nestjs` | Node NestJS API |
-| `repo-padrao-go-api` | Go REST API |
+| Repositório | Linguagem | Quando clonar |
+|---|---|---|
+| `repo-padrao-django` | Python | Django + DRF |
+| `repo-padrao-nestjs` | TypeScript | NestJS API |
+| `repo-padrao-go-api` | Go | Go REST API |
 
 ## Manutenção (mantenedores)
 
@@ -47,7 +49,7 @@ Gerar/atualizar todos os standalone:
 bash scripts/build-standalone-repos.sh --clean
 ```
 
-Stacks fonte em `stacks/laravel`, `stacks/jhipster`, `stacks/abp`, `stacks/django`, `stacks/nestjs`, `stacks/go-api`.
+Stacks fonte em `stacks/` — cada pasta indica a linguagem no `README.md` (`laravel` PHP, `jhipster` Java, `abp` .NET, `django` Python, `nestjs` TypeScript, `go-api` Go).
 
 Guias: [`docs/stacks/LARAVEL.md`](stacks/LARAVEL.md), [`JHIPSTER.md`](stacks/JHIPSTER.md), [`ABP.md`](stacks/ABP.md), [`DJANGO.md`](stacks/DJANGO.md), [`NESTJS.md`](stacks/NESTJS.md), [`GO.md`](stacks/GO.md).
 

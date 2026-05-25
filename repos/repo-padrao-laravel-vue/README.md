@@ -1,5 +1,7 @@
 # repo-padrao-laravel-vue
 
+**Linguagem:** PHP · **Frontend:** Inertia vue
+
 Template pronto para **Laravel + Inertia (vue)** com rules, skills e MCP Laravel Boost.
 
 ## Clone

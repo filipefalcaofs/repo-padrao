@@ -1,5 +1,7 @@
 # repo-padrao-nestjs
 
+**Linguagem:** TypeScript (Node.js)
+
 Template pronto para **NestJS API** (stack secundária).
 
 ## Clone

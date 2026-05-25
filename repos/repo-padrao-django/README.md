@@ -1,5 +1,7 @@
 # repo-padrao-django
 
+**Linguagem:** Python
+
 Template pronto para **Django + DRF** (stack secundária).
 
 ## Clone

@@ -1,8 +1,9 @@
 # Projetos ABP com repo-padrao
 
+> **Linguagem:** .NET (C#)  
 > **Clone direto:** [`repos/repo-padrao-abp-angular`](../../repos/repo-padrao-abp-angular) · [`-react`](../../repos/repo-padrao-abp-react) · [`-blazor`](../../repos/repo-padrao-abp-blazor) · [`-mvc`](../../repos/repo-padrao-abp-mvc).
 
-Guia para aplicações [ABP Framework](https://abp.io/) (.NET).
+Guia para aplicações [ABP Framework](https://abp.io/).
 
 ## Visão geral
 

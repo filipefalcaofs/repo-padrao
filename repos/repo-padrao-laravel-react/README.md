@@ -1,5 +1,7 @@
 # repo-padrao-laravel-react
 
+**Linguagem:** PHP · **Frontend:** Inertia react
+
 Template pronto para **Laravel + Inertia (react)** com rules, skills e MCP Laravel Boost.
 
 ## Clone

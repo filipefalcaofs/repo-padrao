@@ -1,5 +1,7 @@
 # repo-padrao-jhipster-vue
 
+**Linguagem:** Java (Spring Boot) · **Frontend:** vue
+
 Template pronto para **JHipster + vue**.
 
 ## Clone

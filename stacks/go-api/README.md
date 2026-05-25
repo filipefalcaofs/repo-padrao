@@ -1,5 +1,7 @@
 # Stack Go API
 
+**Linguagem:** Go
+
 Stack **custom** para APIs REST em [Go](https://go.dev/) (layout `internal/`, Chi/Gin/Echo conforme projeto).
 
 ## Conteúdo

@@ -1,5 +1,7 @@
 # repo-padrao-abp-mvc
 
+**Linguagem:** .NET (C#) · **UI:** mvc
+
 Template pronto para **ABP + mvc**.
 
 ## Clone

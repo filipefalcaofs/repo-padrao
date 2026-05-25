@@ -1,5 +1,6 @@
 # Projetos NestJS com repo-padrao
 
+> **Linguagem:** TypeScript (Node.js)  
 > **Clone direto:** [`repos/repo-padrao-nestjs`](../../repos/repo-padrao-nestjs)
 
 Stack secundária **custom** — API REST TypeScript.

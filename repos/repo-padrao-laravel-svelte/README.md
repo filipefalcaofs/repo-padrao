@@ -1,5 +1,7 @@
 # repo-padrao-laravel-svelte
 
+**Linguagem:** PHP · **Frontend:** Inertia svelte
+
 Template pronto para **Laravel + Inertia (svelte)** com rules, skills e MCP Laravel Boost.
 
 ## Clone

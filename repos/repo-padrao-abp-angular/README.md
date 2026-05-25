@@ -1,5 +1,7 @@
 # repo-padrao-abp-angular
 
+**Linguagem:** .NET (C#) · **UI:** angular
+
 Template pronto para **ABP + angular**.
 
 ## Clone

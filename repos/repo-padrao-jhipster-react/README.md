@@ -1,5 +1,7 @@
 # repo-padrao-jhipster-react
 
+**Linguagem:** Java (Spring Boot) · **Frontend:** react
+
 Template pronto para **JHipster + react**.
 
 ## Clone

@@ -1,5 +1,7 @@
 # repo-padrao-jhipster-angular
 
+**Linguagem:** Java (Spring Boot) · **Frontend:** angular
+
 Template pronto para **JHipster + angular**.
 
 ## Clone

@@ -1,8 +1,9 @@
 # Projetos JHipster com repo-padrao
 
+> **Linguagem:** Java (Spring Boot)  
 > **Clone direto:** [`repos/repo-padrao-jhipster-angular`](../../repos/repo-padrao-jhipster-angular) · [`-react`](../../repos/repo-padrao-jhipster-react) · [`-vue`](../../repos/repo-padrao-jhipster-vue).
 
-Guia para aplicações [JHipster 8+](https://www.jhipster.tech/) (Java/Spring Boot).
+Guia para aplicações [JHipster 8+](https://www.jhipster.tech/).
 
 ## Visão geral
 

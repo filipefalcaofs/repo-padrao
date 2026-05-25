@@ -1,5 +1,6 @@
 # Projetos Go API com repo-padrao
 
+> **Linguagem:** Go  
 > **Clone direto:** [`repos/repo-padrao-go-api`](../../repos/repo-padrao-go-api)
 
 Stack secundária **custom** — API REST Go (`internal/` layout).

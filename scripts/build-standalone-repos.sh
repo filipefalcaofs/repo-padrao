@@ -50,6 +50,7 @@ copy_base() {
   mkdir -p "$dest/docs/brain" "$dest/docs/stacks"
   cp -R "$ROOT/docs/brain/." "$dest/docs/brain/"
   cp -R "$ROOT/docs/templates-linguagem" "$dest/docs/"
+  cp "$ROOT/docs/CLONAGEM_POR_LINGUAGEM.md" "$dest/docs/"
 
   mkdir -p "$dest/.cursor/rules" "$dest/.cursor/skills" "$dest/.cursor/plugins"
   cp -R "$ROOT/.cursor/plugins/superpowers" "$dest/.cursor/plugins/"
@@ -140,21 +141,21 @@ Use este repo se ainda não sabe a stack ou quer só disciplina de IA (TDD, pt-B
 
 ## Stacks prontas (clone direto)
 
-| Repositório | Stack |
-|---|---|
-| `repo-padrao-laravel-vue` | Laravel + Inertia Vue |
-| `repo-padrao-laravel-react` | Laravel + Inertia React |
-| `repo-padrao-laravel-svelte` | Laravel + Inertia Svelte |
-| `repo-padrao-jhipster-angular` | JHipster + Angular |
-| `repo-padrao-jhipster-react` | JHipster + React |
-| `repo-padrao-jhipster-vue` | JHipster + Vue |
-| `repo-padrao-abp-angular` | ABP + Angular |
-| `repo-padrao-abp-react` | ABP + React modern |
-| `repo-padrao-abp-blazor` | ABP + Blazor |
-| `repo-padrao-abp-mvc` | ABP + MVC |
-| `repo-padrao-django` | Django + DRF *(secundária)* |
-| `repo-padrao-nestjs` | NestJS API *(secundária)* |
-| `repo-padrao-go-api` | Go REST API *(secundária)* |
+| Repositório | Linguagem | Stack |
+|---|---|---|
+| `repo-padrao-laravel-vue` | PHP | Laravel + Inertia Vue |
+| `repo-padrao-laravel-react` | PHP | Laravel + Inertia React |
+| `repo-padrao-laravel-svelte` | PHP | Laravel + Inertia Svelte |
+| `repo-padrao-jhipster-angular` | Java | JHipster + Angular |
+| `repo-padrao-jhipster-react` | Java | JHipster + React |
+| `repo-padrao-jhipster-vue` | Java | JHipster + Vue |
+| `repo-padrao-abp-angular` | .NET (C#) | ABP + Angular |
+| `repo-padrao-abp-react` | .NET (C#) | ABP + React modern |
+| `repo-padrao-abp-blazor` | .NET (C#) | ABP + Blazor |
+| `repo-padrao-abp-mvc` | .NET (C#) | ABP + MVC |
+| `repo-padrao-django` | Python | Django + DRF *(secundária)* |
+| `repo-padrao-nestjs` | TypeScript | NestJS API *(secundária)* |
+| `repo-padrao-go-api` | Go | Go REST API *(secundária)* |
 
 Gerados a partir de [repo-padrao](https://github.com/filipefalcaofs/repo-padrao) (`bash scripts/build-standalone-repos.sh`).
 
@@ -186,6 +187,8 @@ build_laravel() {
   write_copilot_stack "$dest" "Laravel 12/13 + Inertia **${adapter}** + Laravel Boost (rules/skills/MCP)."
   cat > "$dest/README.md" <<EOF
 # ${id}
+
+**Linguagem:** PHP · **Frontend:** Inertia ${adapter}
 
 Template pronto para **Laravel + Inertia (${adapter})** com rules, skills e MCP Laravel Boost.
 
@@ -227,7 +230,7 @@ EOF
   cat > "$dest/CLAUDE.md" <<EOF
 # CLAUDE.md
 
-Stack: **Laravel + Inertia ${adapter}**. Diretrizes completas em [AGENTS.md](./AGENTS.md).
+Stack: **Laravel + Inertia ${adapter}** (PHP). Diretrizes completas em [AGENTS.md](./AGENTS.md).
 
 Skills em \`.claude/skills/\`: \`laravel-best-practices\`, \`laravel-boost\`, \`pest-testing\`, \`inertia-${adapter}-development\`.
 
@@ -249,6 +252,8 @@ build_jhipster() {
   write_copilot_stack "$dest" "JHipster 8+ + frontend **${frontend}** (Spring Boot)."
   cat > "$dest/README.md" <<EOF
 # ${id}
+
+**Linguagem:** Java (Spring Boot) · **Frontend:** ${frontend}
 
 Template pronto para **JHipster + ${frontend}**.
 
@@ -274,7 +279,7 @@ EOF
   cat > "$dest/CLAUDE.md" <<EOF
 # CLAUDE.md
 
-Stack: **JHipster + ${frontend}**. Ver [AGENTS.md](./AGENTS.md).
+Stack: **JHipster + ${frontend}** (Java). Ver [AGENTS.md](./AGENTS.md).
 
 Skills: \`jhipster-development\`, \`jhipster-jdl\`, \`spring-testing\`, \`jhipster-${frontend}-development\`.
 EOF
@@ -302,6 +307,8 @@ build_abp() {
   cat > "$dest/README.md" <<EOF
 # ${id}
 
+**Linguagem:** .NET (C#) · **UI:** ${ui}
+
 Template pronto para **ABP + ${ui}**.
 
 ## Clone
@@ -325,7 +332,7 @@ EOF
   cat > "$dest/CLAUDE.md" <<EOF
 # CLAUDE.md
 
-Stack: **ABP + ${ui}**. Ver [AGENTS.md](./AGENTS.md).
+Stack: **ABP + ${ui}** (.NET C#). Ver [AGENTS.md](./AGENTS.md).
 
 Rules ABP em \`.cursor/rules/\`.$( [[ "$ui" == "react" ]] && echo " Skill \`abp-react-development\` em \`.claude/skills/\`." )
 EOF
@@ -344,6 +351,8 @@ build_django() {
   write_copilot_stack "$dest" "Django + Django REST Framework + pytest-django."
   cat > "$dest/README.md" <<'EOF'
 # repo-padrao-django
+
+**Linguagem:** Python
 
 Template pronto para **Django + DRF** (stack secundária).
 
@@ -369,7 +378,7 @@ EOF
   cat > "$dest/CLAUDE.md" <<'EOF'
 # CLAUDE.md
 
-Stack: **Django + DRF**. Ver [AGENTS.md](./AGENTS.md).
+Stack: **Django + DRF** (Python). Ver [AGENTS.md](./AGENTS.md).
 
 Skills: `django-development`, `django-drf`, `pytest-django`.
 EOF
@@ -388,6 +397,8 @@ build_nestjs() {
   write_copilot_stack "$dest" "NestJS API REST (TypeScript) + Jest."
   cat > "$dest/README.md" <<'EOF'
 # repo-padrao-nestjs
+
+**Linguagem:** TypeScript (Node.js)
 
 Template pronto para **NestJS API** (stack secundária).
 
@@ -411,7 +422,7 @@ EOF
   cat > "$dest/CLAUDE.md" <<'EOF'
 # CLAUDE.md
 
-Stack: **NestJS API**. Ver [AGENTS.md](./AGENTS.md).
+Stack: **NestJS API** (TypeScript). Ver [AGENTS.md](./AGENTS.md).
 
 Skills: `nestjs-development`, `nestjs-testing`.
 EOF
@@ -430,6 +441,8 @@ build_go_api() {
   write_copilot_stack "$dest" "Go REST API (layout internal/) + testes table-driven."
   cat > "$dest/README.md" <<'EOF'
 # repo-padrao-go-api
+
+**Linguagem:** Go
 
 Template pronto para **Go REST API** (stack secundária).
 
@@ -454,7 +467,7 @@ EOF
   cat > "$dest/CLAUDE.md" <<'EOF'
 # CLAUDE.md
 
-Stack: **Go API**. Ver [AGENTS.md](./AGENTS.md).
+Stack: **Go API** (Go). Ver [AGENTS.md](./AGENTS.md).
 
 Skills: `go-api-development`, `go-testing`.
 EOF
@@ -524,6 +537,8 @@ cat > "$OUT/README.md" <<'EOF'
 
 Cada pasta é um **repositório Git independente** — clone direto com stack e variantes já configuradas.
 
+**Escolher pela linguagem:** [`../docs/CLONAGEM_POR_LINGUAGEM.md`](../docs/CLONAGEM_POR_LINGUAGEM.md)
+
 Gerar/atualizar a partir do meta-repo:
 
 ```bash
@@ -532,27 +547,27 @@ bash scripts/build-standalone-repos.sh --clean
 
 ## Catálogo
 
-| Repositório | Stack |
-|---|---|
-| `repo-padrao-base` | Agnóstico (sem stack) |
-| `repo-padrao-laravel-vue` | Laravel + Inertia Vue |
-| `repo-padrao-laravel-react` | Laravel + Inertia React |
-| `repo-padrao-laravel-svelte` | Laravel + Inertia Svelte |
-| `repo-padrao-jhipster-angular` | JHipster + Angular |
-| `repo-padrao-jhipster-react` | JHipster + React |
-| `repo-padrao-jhipster-vue` | JHipster + Vue |
-| `repo-padrao-abp-angular` | ABP + Angular |
-| `repo-padrao-abp-react` | ABP + React modern |
-| `repo-padrao-abp-blazor` | ABP + Blazor |
-| `repo-padrao-abp-mvc` | ABP + MVC |
+| Repositório | Linguagem | Stack |
+|---|---|---|
+| `repo-padrao-base` | — | Agnóstico (sem stack) |
+| `repo-padrao-laravel-vue` | PHP | Laravel + Inertia Vue |
+| `repo-padrao-laravel-react` | PHP | Laravel + Inertia React |
+| `repo-padrao-laravel-svelte` | PHP | Laravel + Inertia Svelte |
+| `repo-padrao-jhipster-angular` | Java | JHipster + Angular |
+| `repo-padrao-jhipster-react` | Java | JHipster + React |
+| `repo-padrao-jhipster-vue` | Java | JHipster + Vue |
+| `repo-padrao-abp-angular` | .NET (C#) | ABP + Angular |
+| `repo-padrao-abp-react` | .NET (C#) | ABP + React modern |
+| `repo-padrao-abp-blazor` | .NET (C#) | ABP + Blazor |
+| `repo-padrao-abp-mvc` | .NET (C#) | ABP + MVC |
 
 ### Stacks secundárias
 
-| Repositório | Stack |
-|---|---|
-| `repo-padrao-django` | Django + DRF |
-| `repo-padrao-nestjs` | NestJS API |
-| `repo-padrao-go-api` | Go REST API |
+| Repositório | Linguagem | Stack |
+|---|---|---|
+| `repo-padrao-django` | Python | Django + DRF |
+| `repo-padrao-nestjs` | TypeScript | NestJS API |
+| `repo-padrao-go-api` | Go | Go REST API |
 
 ## Publicar no GitHub
 

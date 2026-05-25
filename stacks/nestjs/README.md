@@ -1,5 +1,7 @@
 # Stack NestJS
 
+**Linguagem:** TypeScript (Node.js)
+
 Stack **custom** para APIs [NestJS](https://nestjs.com/) (TypeScript).
 
 ## Conteúdo

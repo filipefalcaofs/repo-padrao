@@ -1,5 +1,7 @@
 # Stack Django
 
+**Linguagem:** Python
+
 Stack **custom** para projetos [Django](https://www.djangoproject.com/) + [Django REST Framework](https://www.django-rest-framework.org/).
 
 ## Conteúdo

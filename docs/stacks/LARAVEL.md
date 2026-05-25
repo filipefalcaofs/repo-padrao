@@ -1,5 +1,6 @@
 # Projetos Laravel com repo-padrao
 
+> **Linguagem:** PHP  
 > **Clone direto:** [`repos/repo-padrao-laravel-vue`](../../repos/repo-padrao-laravel-vue) · [`-react`](../../repos/repo-padrao-laravel-react) · [`-svelte`](../../repos/repo-padrao-laravel-svelte) — stack já aplicada, sem scripts pós-clone.
 
 Guia para aplicações [Laravel 12/13](https://laravel.com/docs/13.x) com [Laravel Boost](https://laravel.com/docs/13.x/ai).

@@ -1,5 +1,6 @@
 # Projetos Django com repo-padrao
 
+> **Linguagem:** Python  
 > **Clone direto:** [`repos/repo-padrao-django`](../../repos/repo-padrao-django)
 
 Stack secundária **custom** — Django + DRF + pytest.

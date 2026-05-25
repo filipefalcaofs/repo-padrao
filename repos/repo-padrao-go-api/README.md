@@ -1,5 +1,7 @@
 # repo-padrao-go-api
 
+**Linguagem:** Go
+
 Template pronto para **Go REST API** (stack secundária).
 
 ## Clone

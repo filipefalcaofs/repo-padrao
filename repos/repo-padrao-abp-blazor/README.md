@@ -1,5 +1,7 @@
 # repo-padrao-abp-blazor
 
+**Linguagem:** .NET (C#) · **UI:** blazor
+
 Template pronto para **ABP + blazor**.
 
 ## Clone
