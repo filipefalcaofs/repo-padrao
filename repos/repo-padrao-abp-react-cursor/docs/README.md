@@ -5,6 +5,7 @@
 | Documento | Conteúdo |
 |---|---|
 | [**CLONAGEM_POR_LINGUAGEM.md**](CLONAGEM_POR_LINGUAGEM.md) | Escolher template, `git clone` e bootstrap por linguagem |
+| [**REPOSITORIOS.md**](REPOSITORIOS.md) | Catálogo completo: 42 templates por IDE + 14 legados |
 | [**COMO_USAR.md**](COMO_USAR.md) | Visão geral, catálogo e assistentes |
 | [**brain/README.md**](brain/README.md) | Segundo cérebro (PARA, ADRs, daily) |
 | [**templates-linguagem/README.md**](templates-linguagem/README.md) | `.gitignore` recomendados por stack |

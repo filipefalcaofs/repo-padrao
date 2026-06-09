@@ -29,7 +29,7 @@ repo-padrao-{stack}-{cursor|claude|codex}
 | Claude Code | `-claude` | `CLAUDE.md` + `.claude/skills/` |
 | Codex | `-codex` | `AGENTS.md` + `.codex/skills/` |
 
-Catálogo completo com links: [**CLONAGEM_POR_LINGUAGEM.md**](CLONAGEM_POR_LINGUAGEM.md).
+Catálogo completo com links: [**REPOSITORIOS.md**](REPOSITORIOS.md) (inclui 14 repos legados).
 
 ## Mantenedor do factory
 

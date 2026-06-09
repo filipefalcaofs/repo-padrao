@@ -249,12 +249,37 @@ README.md                 Documentação do projeto
 
 **Codex** deve ler este `AGENTS.md` junto com `.codex/skills/`. **Cursor** e **Claude Code** usam suas pastas nativas (ver tabela acima).
 
-## 12. Resumo executivo
+## 12. Entrega Funcional — Sem Features de Fachada
 
-Se você só vai ler 5 frases:
+> **NENHUMA FEATURE QUE FINGE FUNCIONAR MAS NÃO FUNCIONA.**
+
+Toda feature entregue executa sua lógica real de ponta a ponta.
+
+**Proibido:** botões que não executam nada, telas com resultado simulado, fluxos que "dão certo" sem processar de verdade, adaptadores falsos em runtime fingindo integração, etapas "em construção" disfarçadas de prontas.
+
+**Permitido:** fakes/stubs/mocks **exclusivamente na suíte de testes automatizados**; dados fictícios em seeds de desenvolvimento (a lógica que os processa é sempre real — o que muda é a carga, nunca o comportamento).
+
+**Dependência externa indisponível:** a feature fica explicitamente bloqueada e registrada como pendência — nunca simulada "para destravar". Integração externa só é concluída após validação contra o ambiente de homologação real, com evidência da chamada registrada.
+
+## 13. Parametrização Máxima
+
+> **O ADMIN NUNCA DEPENDE DE DESENVOLVEDOR PARA MUDAR O QUE PODE SER PARÂMETRO.**
+
+Ao implementar qualquer funcionalidade, perguntar: "o que aqui o admin pode querer mudar?" — e transformar em parâmetro administrável.
+
+- **Nenhum valor de negócio hardcoded**: prazos, limiares, taxas, textos, mensagens, termos, URLs de integração — tudo em parâmetros com tipo, validação, valor padrão e histórico auditado (valor anterior, novo, responsável, data/hora), com efeito sem novo deploy.
+- **Feature toggles**: toda funcionalidade acoplável (integrações, fluxos automáticos, IA, canais de notificação, aprovação automática) nasce com chave liga/desliga administrável por interface; desativação degrada de forma controlada e comunicada, nunca com falha silenciosa.
+- **Segurança**: credenciais criptografadas, nunca reexibidas em claro; telas de integração com botão de teste de conexão.
+- **Regras de negócio complexas** (tabelas legais, classificações, condicionantes) modeladas como dados versionados, não como código.
+
+## 14. Resumo executivo
+
+Se você só vai ler 7 frases:
 
 1. Tudo em pt-BR, sem emojis, direto ao ponto.
 2. TDD: teste falhando antes de qualquer código de produção.
 3. Bug: investigar causa raiz antes de tentar correção.
 4. Conventional Commits em pt-BR (`feat:`, `fix:`, etc.).
 5. Decisões arquiteturais viram ADR em `docs/brain/3-resources/adrs/`.
+6. Nenhuma feature de fachada: tudo que parece funcionar, funciona de verdade; fake só em teste.
+7. Parametrização máxima: valores de negócio e toggles administráveis, sem depender de desenvolvedor.

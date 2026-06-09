@@ -47,6 +47,8 @@ Cópias geradas dos **42 templates** (14 stacks × 3 IDEs). Nome: `repo-padrao-{
 
 Desenvolvedores devem clonar os repos GitHub, não copiar de `repos/` manualmente.
 
+**Legado:** os 14 repos `repo-padrao-{stack}` (sem suffix de IDE) não são regenerados pelo factory. Catálogo e migração: [**docs/REPOSITORIOS.md**](../docs/REPOSITORIOS.md).
+
 ## Checklist antes de publicar
 
 - [ ] `bash scripts/build-standalone-repos.sh --clean` sem erros

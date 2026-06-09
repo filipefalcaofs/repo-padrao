@@ -2,8 +2,7 @@
 
 Cópias locais dos **42 repositórios standalone** (14 stacks × 3 IDEs), produzidas por `bash scripts/build-standalone-repos.sh`.
 
-> **Catálogo completo** (links GitHub, legado, migração): [**docs/REPOSITORIOS.md**](../docs/REPOSITORIOS.md)  
-> **Como clonar:** [**docs/CLONAGEM_POR_LINGUAGEM.md**](../docs/CLONAGEM_POR_LINGUAGEM.md)
+> Clone no GitHub com suffix **`-cursor`**, **`-claude`** ou **`-codex`**. Guia: [**docs/CLONAGEM_POR_LINGUAGEM.md**](../docs/CLONAGEM_POR_LINGUAGEM.md).
 
 ## Convenção de nome
 
@@ -40,7 +39,3 @@ bash scripts/push-standalone-repos.sh
 ```
 
 Ver [**docs/MANUTENCAO.md**](../docs/MANUTENCAO.md).
-
-## Legado (14 repos sem suffix de IDE)
-
-Repos `repo-padrao-{stack}` publicados antes da separação por IDE. **Não são atualizados** pelo `build-standalone-repos.sh`. Permanecem no GitHub; índice e substitutos em [**docs/REPOSITORIOS.md#legado-sem-suffix-de-ide**](../docs/REPOSITORIOS.md#legado-sem-suffix-de-ide).

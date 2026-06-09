@@ -136,4 +136,12 @@ go mod init github.com/seu-usuario/meu-api
 2. Crie o projeto da stack na raiz (comandos nos guias em `docs/stacks/`)
 3. Registre em `docs/brain/3-resources/adrs/0001-escolha-de-stack.md`
 
-Catálogo no factory: [repos/README.md no meta-repo](https://github.com/filipefalcaofs/repo-padrao/blob/main/repos/README.md).
+Catálogo no factory: [docs/REPOSITORIOS.md](https://github.com/filipefalcaofs/repo-padrao/blob/main/docs/REPOSITORIOS.md) (42 atuais + 14 legados).
+
+---
+
+## Repositórios legados
+
+Existem **14 repos antigos** sem suffix de IDE (`repo-padrao-laravel-vue`, `repo-padrao-django`, etc.). Permanecem no GitHub para compatibilidade, mas **não são atualizados** pelo factory.
+
+Para projetos novos, use sempre `-cursor`, `-claude` ou `-codex`. Tabela completa e migração: [**REPOSITORIOS.md**](REPOSITORIOS.md#legado-sem-suffix-de-ide).

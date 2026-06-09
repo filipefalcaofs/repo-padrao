@@ -19,6 +19,8 @@ UNIVERSAL_RULES=(
   git.mdc
   docker-publish.mdc
   portugues-gramatica.mdc
+  entrega-funcional.mdc
+  parametrizacao.mdc
 )
 
 usage() {
