@@ -265,7 +265,7 @@ Toda feature entregue executa sua lógica real de ponta a ponta.
 
 > **O ADMIN NUNCA DEPENDE DE DESENVOLVEDOR PARA MUDAR O QUE PODE SER PARÂMETRO.**
 
-Ao implementar qualquer funcionalidade, perguntar: "o que aqui o admin pode querer mudar?" — e transformar em parâmetro administrável.
+Parametrização máxima é a parametrização **do que faz sentido parametrizar** — não de tudo. Ao implementar qualquer funcionalidade, perguntar: "o que aqui o admin pode querer mudar?" — e transformar em parâmetro administrável. Constantes técnicas, detalhes internos de implementação e decisões de arquitetura NÃO viram parâmetro: parametrizar tudo gera painel inutilizável — o critério é "existe alguém de negócio que pode querer mudar isso sem deploy?".
 
 - **Nenhum valor de negócio hardcoded**: prazos, limiares, taxas, textos, mensagens, termos, URLs de integração — tudo em parâmetros com tipo, validação, valor padrão e histórico auditado (valor anterior, novo, responsável, data/hora), com efeito sem novo deploy.
 - **Feature toggles**: toda funcionalidade acoplável (integrações, fluxos automáticos, IA, canais de notificação, aprovação automática) nasce com chave liga/desliga administrável por interface; desativação degrada de forma controlada e comunicada, nunca com falha silenciosa.

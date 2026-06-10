@@ -13,4 +13,4 @@ Skills: `laravel-best-practices`, `laravel-boost`, `pest-testing`, `inertia-reac
 - **Conventional Commits** em pt-BR (`feat:`, `fix:`, …)
 - Decisões arquiteturais → ADR em `docs/brain/3-resources/adrs/`
 - **Sem features de fachada** — toda feature executa a lógica real de ponta a ponta; fakes/mocks só na suíte de testes; dependência externa indisponível = feature bloqueada e registrada, nunca simulada
-- **Parametrização máxima** — nenhum valor de negócio hardcoded; parâmetros e feature toggles administráveis por interface, com histórico auditado, efeito sem deploy e credenciais criptografadas
+- **Parametrização máxima** — parametrizar o que faz sentido (valores de negócio, toggles, integrações), não constantes técnicas; nenhum valor de negócio hardcoded; parâmetros administráveis por interface, com histórico auditado, efeito sem deploy e credenciais criptografadas
