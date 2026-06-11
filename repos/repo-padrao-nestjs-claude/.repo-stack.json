@@ -1,8 +1,0 @@
-{
-  "template_id": "repo-padrao-nestjs-claude",
-  "stack": "nestjs",
-  "variant": "api",
-  "ide": "claude",
-  "generated_from": "filipefalcaofs/repo-padrao",
-  "generated_at": "2026-06-10T04:07:22Z"
-}

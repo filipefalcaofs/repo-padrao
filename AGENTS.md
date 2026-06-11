@@ -13,8 +13,7 @@ Este projeto pode usar qualquer linguagem (Node, Python, Go, Rust, Java, PHP, Ru
 - TDD vale para qualquer linguagem (use o framework de teste idiomático: vitest/jest, pytest, go test, cargo test, JUnit, PHPUnit, RSpec, ExUnit, XCTest, etc.).
 - Conventional Commits, debugging sistemático, brainstorming, verificação antes de concluir, segundo cérebro e regras git são universais.
 - A seção Docker (item 8) **só se aplica se o projeto usa containers**. Ignore-a em projetos que rodam direto na máquina.
-- Nos **repos standalone** (`repos/repo-padrao-*-{cursor|claude|codex}`), cada clone traz **só a IDE escolhida** — ver [`docs/CLONAGEM_POR_LINGUAGEM.md`](docs/CLONAGEM_POR_LINGUAGEM.md).
-- **Meta-repo** (`repo-padrao`): mantém fontes em `stacks/`; gere standalone com `bash scripts/build-standalone-repos.sh`.
+- Projetos são criados a partir do `repo-padrao` com `bash scripts/setup.sh` (aiox-core + overlay de convenções + stack) — ver `docs/COMO_USAR.md`.
 - **Superpowers** ([obra/superpowers](https://github.com/obra/superpowers)): plugin em `.cursor/plugins/superpowers/`; rule `.cursor/rules/superpowers.mdc`. Invocar skills do plugin (brainstorming, TDD, systematic-debugging, etc.) — não usar GSD.
 
 ## 1. Idioma

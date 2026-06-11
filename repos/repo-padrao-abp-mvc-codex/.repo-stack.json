@@ -1,8 +1,0 @@
-{
-  "template_id": "repo-padrao-abp-mvc-codex",
-  "stack": "abp",
-  "variant": "mvc",
-  "ide": "codex",
-  "generated_from": "filipefalcaofs/repo-padrao",
-  "generated_at": "2026-06-10T04:07:27Z"
-}

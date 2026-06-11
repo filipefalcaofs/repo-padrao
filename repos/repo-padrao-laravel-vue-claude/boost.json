@@ -1,8 +1,0 @@
-{
-  "agents": ["cursor"],
-  "features": ["guidelines", "skills", "mcp"],
-  "guidelines": true,
-  "skills": true,
-  "mcp": true,
-  "sail": false
-}

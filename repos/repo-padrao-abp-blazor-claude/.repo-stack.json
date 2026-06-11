@@ -1,8 +1,0 @@
-{
-  "template_id": "repo-padrao-abp-blazor-claude",
-  "stack": "abp",
-  "variant": "blazor",
-  "ide": "claude",
-  "generated_from": "filipefalcaofs/repo-padrao",
-  "generated_at": "2026-06-10T04:07:21Z"
-}

@@ -1,8 +1,0 @@
-{
-  "template_id": "repo-padrao-jhipster-vue-claude",
-  "stack": "jhipster",
-  "variant": "vue",
-  "ide": "claude",
-  "generated_from": "filipefalcaofs/repo-padrao",
-  "generated_at": "2026-06-10T04:07:20Z"
-}

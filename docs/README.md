@@ -4,15 +4,16 @@
 
 | Documento | Conteúdo |
 |---|---|
-| [**CLONAGEM_POR_LINGUAGEM.md**](CLONAGEM_POR_LINGUAGEM.md) | Escolher template, `git clone` e bootstrap por linguagem |
-| [**REPOSITORIOS.md**](REPOSITORIOS.md) | Catálogo completo: 42 templates por IDE + 14 legados |
-| [**COMO_USAR.md**](COMO_USAR.md) | Visão geral, catálogo e assistentes |
+| [**COMO_USAR.md**](COMO_USAR.md) | Fluxo completo: `setup.sh` (aiox-core + overlay + stack) |
+| [**CLONAGEM_POR_LINGUAGEM.md**](CLONAGEM_POR_LINGUAGEM.md) | Comandos de bootstrap por linguagem |
+| [**REPOSITORIOS.md**](REPOSITORIOS.md) | Catálogo: repo ativo + 42 arquivados + 14 legados |
+| [**../overlay/README.md**](../overlay/README.md) | O que o overlay aplica nos projetos |
 | [**brain/README.md**](brain/README.md) | Segundo cérebro (PARA, ADRs, daily) |
 | [**templates-linguagem/README.md**](templates-linguagem/README.md) | `.gitignore` recomendados por stack |
 
 ## Guias por stack
 
-| Linguagem | Guia | Fonte no factory |
+| Linguagem | Guia | Fonte |
 |---|---|---|
 | PHP | [LARAVEL.md](stacks/LARAVEL.md) | `stacks/laravel/` |
 | Java | [JHIPSTER.md](stacks/JHIPSTER.md) | `stacks/jhipster/` |
@@ -25,6 +26,5 @@
 
 | Documento | Conteúdo |
 |---|---|
-| [**MANUTENCAO.md**](MANUTENCAO.md) | Build, publicação e sync de rules upstream |
-| [../repos/README.md](../repos/README.md) | Catálogo das cópias geradas em `repos/` |
-| [../scripts/](../scripts/) | `build-standalone-repos.sh`, `push-standalone-repos.sh` |
+| [**MANUTENCAO.md**](MANUTENCAO.md) | Fluxo de manutenção do overlay e das stacks |
+| [../scripts/](../scripts/) | `setup.sh`, `choose-stack.sh` e scripts legados |
